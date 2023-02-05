@@ -1,0 +1,18 @@
+.svg-white {
+  fill: white;
+}
+
+.movimiento {
+  animation: prueba 3s forwards;
+}
+
+@keyframes prueba {
+  100% {
+    transform: translateY(50%);
+  }
+
+  60% {
+    opacity: 0;
+    display: none;
+  }
+}
