@@ -8,10 +8,10 @@
 
 @keyframes prueba {
   100% {
-    transform: translateY(50%);
+    transform: translateY(-3%);
   }
 
-  60% {
+  50% {
     opacity: 0;
     display: none;
   }
