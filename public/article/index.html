@@ -1,154 +1,188 @@
 <!DOCTYPE html>
 <html lang="es-MX">
-  <head>
-    <!-- UIkit CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css"
-    />
 
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+<head>
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La IA, no es IA</title>
-  </head>
-  <body>
-    <div class="uk-container">
-      <div uk-grid>
-        <div class="uk-width-2-3@m">
-          <div class="uk-padding-large">
-            <article class="uk-article">
-              <h1 class="uk-article-title">Por qué la Inteligencia Artificial, no es Inteligencia Artificial.</h1>
-              <p class="uk-text-lead">
-                Por: Alexis Heras
-              </p>
-              <h2 class="uk-margin-small-bottom" id="a">Pareciera Magia</h2>
-              <p class="uk-margin-small-top">
-                Mucho se habla del uso de la Inteligencia Artificial (IA) para realizar diversas tareas, como calcular la temperatura, generar imágenes desde una descripción, hasta escribir un artículo completo de algún tema (casi sin errores) el caso del famoso ‘Chat GPT’ desarrollado por la empresa OpenIA.
-<br>
-<br>
-En la antigüedad, los seres humanos podían ver relámpagos y truenos durante una tormenta y no entender su origen. Para ellos, podría parecer que los dioses estaban enojados y causando este fenómeno a través de algún tipo de poder mágico. Sin embargo, hoy en día sabemos que los relámpagos y los truenos son el resultado de la electricidad estática acumulada en las nubes.
+  <script src="../js/jquery-3.6.3.js"></script>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
 
-En la Edad Media, la gente podía ver a alguien con una enfermedad y no tener una comprensión clara de cómo o por qué la enfermedad estaba sucediendo. Para ellos, podría parecer que la enfermedad era causada por un maleficio o una maldición, y podrían buscar un curandero o un mago para tratar de curarla. Sin embargo, hoy en día sabemos que la mayoría de las enfermedades son causadas por gérmenes o virus, y que se pueden tratar con medicamentos y terapias médicas.
-<br>
-<br>
-Si bien queda claro que no es magia lo que muestra OpenIA, tampoco es verdaderamente ‘Inteligencia Artificial’, debemos tener en cuenta la definición de inteligencia. Los psicólogos llevan más de cien años intentando definir la inteligencia, y parece que todavía no hay dos que digan lo mismo en torno a este concepto. Pero en esta ocasión voy a considerar la siguiente definición obtenida de Oxford Languages: ‘Facultad de la mente que permite aprender, entender, razonar, tomar decisiones y formarse una idea determinada de la realidad.’ Nos describe las características principales para definir qué es realmente inteligente, y para que se cumpla la definición deben de cumplirse el 50 + 1 de las características, cosas que la IA no cumple, esta misma solo cumple con las primeras dos características aprender y entender.
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="../assets/icons/site.webmanifest">
 
-              </p>
-              <h3 class="uk-margin-small-bottom" id="a1">Licence</h3>
-              <p class="uk-margin-small-top">
-                Morbi hendrerit in dolor vulputate maximus. Nam mattis orci vel
-                lacinia pulvinar. Aliquam dignissim diam sit amet purus dictum
-                congue. Quisque malesuada, eros eu ornare rutrum, dolor sem
-                molestie diam, id ultrices lectus velit in lorem. In cursus
-                justo sed eleifend vehicula. Sed quis cursus nibh. Suspendisse
-                euismod turpis sit amet ultricies posuere. Proin ac tellus
-                tellus. Cras tincidunt elit nec metus sodales, elementum congue
-                lacus tincidunt. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Ut rhoncus commodo quam sed posuere.
-              </p>
-              <ol class="uk-margin-medium">
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-              </ol>
-              <h2 class="uk-margin-small-bottom" id="b">Installation</h2>
-              <p class="uk-margin-small-top">
-                Quisque at vulputate dolor, sit amet bibendum massa. Ut vehicula
-                et lectus at rutrum. Aenean id dapibus sem. Maecenas porttitor
-                est dui, eget placerat orci dapibus sed. Sed faucibus commodo
-                mattis. Vivamus pulvinar ex massa, et feugiat felis dictum id.
-                Fusce condimentum pulvinar suscipit. Phasellus est purus,
-                fermentum eu tempor ut, egestas vel orci. Praesent dignissim
-                lobortis malesuada. Etiam lorem urna, pellentesque a tincidunt
-                sit amet, mattis eget ligula. Proin placerat mi orci, ac
-                eleifend magna fringilla ut. Nam et dictum dolor. Nam quis dui
-                sed magna faucibus rhoncus. Quisque quam turpis, dictum vel
-                lectus suscipit, bibendum sodales erat. Quisque quis congue ex.
-              </p>
-              <h3 class="uk-margin-small-bottom" id="b1">
-                System requirements check
-              </h3>
-              <p class="uk-margin-small-top">
-                Nunc et lacus risus. In pulvinar lectus et magna facilisis, at
-                rhoncus nunc eleifend. Ut egestas porttitor odio vel
-                pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing
-                elit. Sed ac ornare felis. Donec ultricies, turpis elementum
-                vestibulum pretium, lacus ligula lacinia nibh, et blandit ex
-                neque id ipsum. Donec malesuada cursus tempus. In in bibendum
-                ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Quisque vitae dui sed justo mattis faucibus. Maecenas nec nibh
-                est. Duis quis efficitur dui, eget efficitur turpis. Etiam
-                consectetur sem in lectus ornare, a ornare elit ullamcorper.
-                Nulla facilisi. In interdum molestie mollis. Cras laoreet, nisi
-                nec condimentum facilisis, velit lectus posuere felis, sed
-                sollicitudin neque dolor et lorem.
-              </p>
-              <h3 class="uk-margin-small-bottom" id="b2">
-                Download and install
-              </h3>
-              <p class="uk-margin-small-top">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                lacus nisi, cursus non nisi vel, lacinia facilisis tortor.
-                Nullam vehicula leo sem, lacinia eleifend ante lobortis nec.
-                Proin a finibus lorem. Duis ante leo, suscipit quis feugiat ac,
-                iaculis vitae justo. Ut at rhoncus sapien, nec accumsan diam.
-                Vivamus molestie nisl vel ligula hendrerit, non volutpat tellus
-                congue. Morbi commodo in arcu finibus laoreet. Ut efficitur
-                sapien nec ligula vulputate imperdiet.
-              </p>
-              <h2 class="uk-margin-small-bottom" id="c">Backup</h2>
-              <p class="uk-margin-small-top">
-                Quisque purus odio, mollis at quam nec, rhoncus tempor sapien.
-                Pellentesque finibus elit arcu, non pulvinar tortor cursus id.
-                In rhoncus ac eros vel vestibulum. Maecenas massa urna, ornare
-                at felis sit amet, lacinia efficitur arcu. Pellentesque sit amet
-                odio id massa condimentum pulvinar sed sit amet ipsum. Fusce
-                rhoncus, libero vitae molestie pellentesque, ipsum nisi
-                vulputate ex, vulputate tincidunt metus magna sed ipsum.
-                Pellentesque lobortis mollis magna, non hendrerit metus aliquet
-                eu.
-              </p>
-              <h2 class="uk-margin-small-bottom" id="d">Recovery</h2>
-              <p class="uk-margin-small-top">
-                Sed tempor urna nec est vulputate egestas. Sed at scelerisque
-                orci, quis tristique leo. Quisque et dolor eget arcu semper
-                ultricies id eu ante. Mauris dignissim bibendum nulla sed
-                aliquam. Nunc consequat purus magna, et malesuada metus
-                porttitor ac. Vivamus et neque ullamcorper, consequat ligula
-                eget, fringilla nulla. Maecenas a neque sapien. Nunc vulputate
-                magna orci, et malesuada velit ultrices eget. Interdum et
-                malesuada fames ac ante ipsum primis in faucibus. Fusce aliquam
-                velit ut interdum mollis. Suspendisse placerat lacus a lectus
-                venenatis cursus vel ut orci. Morbi sodales dolor in sem dictum,
-                in pulvinar risus finibus. Nullam eleifend nec nisi sit amet
-                condimentum.
-              </p>
-            </article>
-          </div>
-        </div>
-        <div class="uk-width-1-3@m">
-          <div class="uk-visible@m" uk-sticky="offset: 40; bottom: #article;">
-            <h2>Tabla de contenido</h2>
-            <div>
-              <div uk-scrollspy-nav="closest: a; scroll: true; offset: 40;">
-                <ul class="uk-list">
-                  <li><a href="#a">Pareciera Magia</a></li>
-                  <li><a href="#a1">Licence</a></li>
-                  <li><a href="#b">nstallation</a></li>
-                  <li><a href="#b1">System requirements check</a></li>
-                  <li><a href="#b2">Download and install</a></li>
-                  <li><a href="#c">Backup</a></li>
-                  <li><a href="#d">Recovery</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
+  <meta property="og:type" content="devenir">
+  <meta property="og:image" itemprop="image primaryImageOfPage"
+    content="https://alexheras.web.app/assets/dalle/roboto_model.png">
+  <meta property="og:url" content="https://alexheras.web.app/article/">
+
+
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Inteligencia Artificial, no es Inteligencia Artificial.</title>
+</head>
+
+<body>
+  <div class="uk-container">
+    <div uk-grid>
+      <div class="uk-width-2-3@m">
+        <div class="uk-padding-large">
+          <article class="uk-article">
+            <h1 class="uk-article-title">Por qué la Inteligencia Artificial, no es Inteligencia Artificial.</h1>
+            <p class="uk-article-meta">Escrito por <a href="https://www.facebook.com/HerasAlexis" target="_blank">Alexis
+                Heras</a> el 14 de
+              Febrero 2023. A traves de <a href="https://alexheras.web.app/" target="_blank">devenir.</a></p>
+
+            <h2 class="uk-margin-small-bottom" id="a">Pareciera Magia</h2>
+            <p class="uk-margin-small-top">
+              Mucho se habla del uso de la Inteligencia Artificial (IA) para realizar diversas tareas, como calcular la
+              temperatura, generar imágenes a partir de una descripción, hasta escribir un artículo completo de algún
+              tema (casi sin errores), el caso del famoso ‘Chat GPT’ desarrollado por la empresa OpenIA.
+              <br>
+              <br>
+              En la antigüedad, los seres humanos podían ver relámpagos y truenos durante una tormenta y no entender su
+              origen. Para ellos, podría parecer que los dioses estaban enojados y causando este fenómeno a través de
+              algún tipo de poder mágico. Sin embargo, hoy en día sabemos que los relámpagos y los truenos son el
+              resultado de la electricidad estática acumulada en las nubes.
+
+              En la Edad Media, la gente podía ver a alguien con una enfermedad y no tener una comprensión clara de cómo
+              o por qué la enfermedad estaba sucediendo. Para ellos, podría parecer que la enfermedad era causada por un
+              maleficio o una maldición, y podrían buscar un curandero o un mago para tratar de curarla. Sin embargo,
+              hoy en día sabemos que la mayoría de las enfermedades son causadas por gérmenes o virus, y que se pueden
+              tratar con medicamentos y terapias médicas.
+
+              <br>
+              <br>
+              Si bien queda claro que no es magia lo que muestra OpenIA, tampoco es verdaderamente ‘Inteligencia
+              Artificial’, debemos tener en cuenta la definición de inteligencia. Los psicólogos llevan más de cien años
+              intentando definir la inteligencia, y parece que todavía no hay dos que digan lo mismo en torno a este
+              concepto. Pero en esta ocasión voy a considerar la siguiente definición obtenida de Oxford Languages:
+              ‘Facultad de la mente que permite aprender, entender, razonar, tomar decisiones y formarse una idea
+              determinada de la realidad.’ No hay mucha diferencia entre otras definiciones, puedes buscarlo si gustas,
+              pero siempre nos describe las características principales para definir qué es realmente inteligente, y
+              para que se cumpla la definición deben de cumplirse la mayoría de las características, cosas que la IA no
+              cumple, esta misma solo cumple con las primeras dos características. La parte artificial describe que es
+              creada por el ser humano, no proviene de la naturaleza, como sí es, la inteligencia del ser humano, que
+              cumple con todas las caracteristicas, pues de aquí parte la creación de la definición.
+
+            </p>
+            <h3 class="uk-margin-small-bottom" id="a1">¿Que es realmente?</h3>
+            <p class="uk-margin-small-top">
+              Para comprender qué es Chat GPT, midjourney, DALL·E 2, entre otros sistemas muy de moda, debemos saber
+              cómo funcionan, la base de estos nace en el campo del Machine Learning, que se centra en el desarrollo de
+              algoritmos y técnicas de aprendizaje automático para que las computadoras pueden aprender a partir de
+              datos y mejorar su rendimiento en tareas específicas sin ser programadas explícitamente, lo que significa
+              que no se necesita una programación manual para cada tarea y que la computadora puede adaptarse y mejorar
+              por sí misma a medida que recibe más datos y experiencia.
+              En el aprendizaje automático, un modelo es entrenado con un conjunto de datos y utiliza esos datos para
+              hacer predicciones o tomar decisiones. A medida que se recopila más información, el modelo puede
+              actualizarse y mejorar su rendimiento. Hay muchos tipos diferentes de algoritmos de aprendizaje
+              automático, desde regresión lineal hasta redes neuronales profundas, y cada uno es más adecuado para
+              diferentes tipos de problemas y datos. De manera sencilla y sin tecnicismos, el aprendizaje automático es
+              una técnica de inteligencia artificial que permite a las computadoras aprender por sí mismas. Para lograr
+              esto, se le proporciona una gran cantidad de datos y se les enseña a reconocer patrones en ellos. La
+              máquina utiliza estos patrones para hacer predicciones y mejorar su capacidad para reconocer patrones en
+              el futuro. Por ejemplo, imagina que queremos enseñar a una computadora a reconocer frutas. Le
+              proporcionamos una gran cantidad de imágenes de diferentes frutas y le indicamos cuáles son manzanas,
+              cuáles son peras, etc. La máquina aprende a reconocer los patrones distintivos de cada fruta y, a partir
+              de ahí, puede identificar frutas nuevas que nunca ha visto antes.Este proceso es muy similar a cómo los
+              humanos aprendemos, solo que la máquina puede analizar muchos más datos y reconocer patrones mucho más
+              complejos y precisos. Con el tiempo, la máquina puede mejorar su capacidad para reconocer frutas y hacer
+              predicciones más precisas.
+
+
+
+            </p>
+
+            <h2 class="uk-margin-small-bottom" id="b">Entonces...</h2>
+            <p class="uk-margin-small-top">
+              Así es cómo puede cumplir con las dos primeras características dentro del concepto de inteligencia, pero
+              para definir un término más preciso con su capacidad podríamos llamarlos ‘Modelos de generación y
+              aprendizaje automático’, podemos encontrar; Modelos de procesamiento del Lenguaje Natural (Chat GPT),
+              Modelos de clasificación y generación de imágenes (Midjourney, Stable Diffusion o DallE, entre los más
+              populares), Modelos de clasificación y generación de audio (Whisper, Murf o Tacotron). Y así evitamos un
+              término que está muy lejos de su capacidad, no permitamos que nos lo vendan como supuesta “inteligencia
+              artificial” pues sería caer en aquello de la magia, le agregan un valor que no posee, debemos conocer cómo
+              se construyen, como funcionan y cuál es su capacidad verdadera, así mismo no debemos regresar al pasado
+              ignorando el funcionamiento de las cosas y permitiendo que solo los desarrolladores de tecnología
+              determinen una definición.
+
+            </p>
+
+          </article>
         </div>
       </div>
+      <div class="uk-width-1-3@m">
+        <div class="uk-visible@m" uk-sticky="offset: 40; bottom: #article;">
+          <h2>Tabla de contenidos:</h2>
+          <div>
+            <div uk-scrollspy-nav="closest: a; scroll: true; offset: 40;">
+              <ul class="uk-list">
+                <li><a href="#a">Pareciera Magia</a></li>
+                <li><a href="#a1">¿Qué es realmente?</a></li>
+                <li><a href="#b">Entonces...</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
+            data-src="../assets/dalle/roboto_model.png" uk-img>
+
+          </div>
+
+          <div>
+            <div class="uk-card uk-card-default uk-card-small">
+              <div class="uk-text-left uk-card-body">
+                <code>Prompt: </code> 3d render de un Robot que usa una mascara para ocultar operaciones matemáticas, de
+                frente una conversación. <code>DALL·E 2</code>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+        <div class="uk-offcanvas-bar">
+
+          <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+          <h3>¿Te gusto?</h3>
+
+          <p>Ayudame compartiendo el articulo en: </p>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://alexheras.web.app/article/">Facebook</a>
+          <br>
+          <a
+            href="https://twitter.com/intent/tweet?text=Devenir publica: &url=https://alexheras.web.app/article/&hashtags=IA">Twitter</a>
+          <br>
+          <a href="https://api.whatsapp.com/send?text=Lee de devenir: https://alexheras.web.app/article/">Whatsapp</a>
+
+          <p>Puedes dejar tus opiniones o comentarios en tu publciación, así podremos retroalimentar la información.</p>
+
+
+
+
+
+
+
+        </div>
+      </div>
+
     </div>
-  </body>
+
+
+</body>
+
+<script src="./js/main.js"></script>
+
 </html>

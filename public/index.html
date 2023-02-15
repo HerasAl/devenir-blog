@@ -1,120 +1,101 @@
 <!DOCTYPE html>
 <html lang="es-MX">
-  <head>
-    <!-- UIkit CSS -->
 
-    <link rel="stylesheet" href="css/uikit.min.css" />
-    <script src="js/uikit.min.js"></script>
-    <script src="js/uikit-icons.min.js"></script>
-    <script src="js/jquery-3.6.3.js"></script>
+<head>
+  <!-- UIkit CSS -->
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>devenir</title>
-  </head>
-  <body>
-    <div
-      class="uk-position-relative uk-background-center-center uk-background-cover"
-      uk-height-viewport
-    >
-      <div class="uk-position-cover uk-cover-container">
-        <video autoplay loop playsinline muted uk-cover>
-          <source src="assets/video/cover_code.mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="uk-position-cover"></div>
-      <nav class="uk-navbar-container uk-navbar-transparent uk-light">
-        <div class="uk-container">
-          <div uk-navbar>
-            <div class="uk-navbar-left uk-animation-toggle">
-              <a class="uk-navbar-item uk-logo uk-width-1-6@m">
-                <img
-                  src="assets/svg/logo.svg"
-                  class="uk-animation-shake"
-                  uk-svg
-                />
-              </a>
-            </div>
-            <div class="uk-navbar-center">
-              <ul class="uk-navbar-nav uk-visible@m">
-                <li class="uk-active"><a href="#">Inicio</a></li>
-                <li>
-                  <a href="#">RECIENTES</a>
-                  <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                      <li>
-                        <a href="./article/ia/"
-                          >'La "magia" de la Inteligencia Artificial'</a
-                        >
-                      </li>
-                      <li><a href="#">Articulo 2</a></li>
-                      <li><a href="#">Articulo 3</a></li>
-                    </ul>
-                  </div>
-                </li>
-                <li><a href="#">NOTAS Y ARTICULOS</a></li>
-                <li><a href="#">MIS REDES</a></li>
-                <li><a href="#">COMENTARIOS</a></li>
-              </ul>
-            </div>
-            <div class="uk-navbar-right">
-              <ul class="uk-navbar-nav uk-visible@m">
-                <li>
-                  <div class="uk-navbar-item uk-animation-toggle">
-                    <a
-                      href="./sareh"
-                      class="uk-button uk-button-small uk-button-default uk-animation-scale-up"
-                      >SAREH</a
-                    >
-                  </div>
-                </li>
-              </ul>
-              <a
-                href="#offcanvas-menu"
-                class="uk-navbar-toggle uk-hidden@m"
-                uk-navbar-toggle-icon
-                uk-toggle
-              ></a>
-            </div>
+  <link rel="stylesheet" href="css/uikit.min.css" />
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  <script src="js/jquery-3.6.3.js"></script>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="./assets/icons/site.webmanifest">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>devenir</title>
+</head>
+
+<body>
+  <div class="uk-position-relative uk-background-center-center uk-background-cover" uk-height-viewport>
+    <div class="uk-position-cover uk-cover-container">
+      <video autoplay loop playsinline muted uk-cover>
+        <source src="assets/video/cover_code.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="uk-position-cover"></div>
+    <nav class="uk-navbar-container uk-navbar-transparent uk-light">
+      <div class="uk-container">
+        <div uk-navbar>
+          <div class="uk-navbar-left uk-animation-toggle">
+            <a class="uk-navbar-item uk-logo uk-width-1-6@m">
+              <img src="assets/svg/logo.svg" class="uk-animation-shake" uk-svg />
+            </a>
+          </div>
+          <div class="uk-navbar-center">
+            <ul class="uk-navbar-nav uk-visible@m">
+              <li class="uk-active"><a href="#">Inicio</a></li>
+              <li>
+                <a href="#">RECIENTES</a>
+                <div class="uk-navbar-dropdown">
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li>
+                      <a href="./article">La Inteligencia Artificial, no es Inteligencia Artificial</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#">NOTAS Y ARTICULOS</a></li>
+              <li><a href="#">MIS REDES</a></li>
+              <li><a href="#">COMENTARIOS</a></li>
+            </ul>
+          </div>
+          <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav uk-visible@m">
+              <li>
+                <div class="uk-navbar-item uk-animation-toggle">
+                  <a href="./sareh" class="uk-button uk-button-small uk-button-default uk-animation-scale-up">SAREH</a>
+                </div>
+              </li>
+            </ul>
+            <a href="#offcanvas-menu" class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon uk-toggle></a>
           </div>
         </div>
-      </nav>
-      <div
-        id="contenedor"
-        class="uk-position-relative uk-container uk-container-small uk-flex uk-flex-middle movimiento"
-        uk-height-viewport="offset-top: true"
-      >
-        <div class="uk-section uk-section-regular uk-width-1-1 uk-light">
-          <div class="uk-flex uk-text-center uk-flex-middle uk-flex-center">
-            <div class="uk-width-1-1">
-              <h1 class="uk-heading-small">Bienvenido</h1>
-              <div id="texto_wel" class="uk-text-lead">
-                devenir es un blog personal dondé subire contenido creado por
-                mi, opiniones, tutoriales, código, entre otras cosas que me
-                agraden &#128156;
-              </div>
-              <div class="uk-margin-large-top uk-animation-toggle">
-                <p>
-                  <a
-                    onclick="light()"
-                    class="uk-button uk-button-default uk-button-xlarge uk-animation-scale-up"
-                    >Esperar más rapido</a
-                  >
-                </p>
-                <progress
-                  id="progress"
-                  class="uk-progress uk-margin-large-top"
-                  value="11"
-                  max="100"
-                ></progress>
-              </div>
+      </div>
+    </nav>
+    <div id="contenedor" class="uk-position-relative uk-container uk-container-small uk-flex uk-flex-middle movimiento"
+      uk-height-viewport="offset-top: true">
+      <div class="uk-section uk-section-regular uk-width-1-1 uk-light">
+        <div class="uk-flex uk-text-center uk-flex-middle uk-flex-center">
+          <div class="uk-width-1-1">
+            <h1 class="uk-heading-small">Bienvenido</h1>
+            <div id="texto_wel" class="uk-text-lead">
+              devenir es un blog personal dondé subire contenido creado por
+              mi, opiniones, tutoriales, código, entre otras cosas que me
+              agraden &#128156;
+            </div>
+            <div class="uk-margin-large-top uk-animation-toggle">
+              <p>
+                <a onclick="light()" class="uk-button uk-button-default uk-button-xlarge uk-animation-scale-up">Esperar
+                  más rapido</a>
+              </p>
+              <progress id="progress" class="uk-progress uk-margin-large-top" value="11" max="100"></progress>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
 
-  <link rel="stylesheet" href="css/main.css" />
-  <script src="js/main.js"></script>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href="css/main.css" />
+<script src="js/main.js"></script>
+
 </html>
