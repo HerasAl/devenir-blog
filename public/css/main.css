@@ -3,7 +3,7 @@
 }
 
 .movimiento {
-  animation: prueba 3s forwards;
+  animation: prueba 0.8s forwards;
 }
 
 @keyframes prueba {

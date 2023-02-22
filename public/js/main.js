@@ -1,14 +1,10 @@
 function article(params) {
-    switch (params) {
-        case 0:
-            $('#contenedor').html('<h2>¡Felicidades! Has cambiado el contenido del body</h2>');
-            break;
     
-        default:
-            $('#contenedor').html('<h2>Articulo no disponible 😞</h2>');
 
-            break;
-    }
+        $("#wel").hide();
+        $("#notesDiv").show();
+
+
 }
 
 
@@ -60,6 +56,6 @@ UIkit.util.ready(function () {
 
 genEmoji();
 
-$('#article0').click(() => {
-    article(1);  
+$('#notes').click(() => {
+    article();  
 })
