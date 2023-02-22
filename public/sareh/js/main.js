@@ -1,1 +1,0 @@
-var avatar = document.getElementById("myDIV");
