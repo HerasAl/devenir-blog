@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-MX">
 
-<body>
-
-
 
 <head>
     <!-- UIkit CSS -->
@@ -29,7 +26,7 @@
         <div class="uk-width-1-2@m uk-padding-large uk-flex uk-flex-middle uk-flex-center" data-uk-height-viewport>
             <div class="uk-width-3-4@s">
                 <div class="uk-text-center uk-margin-bottom">
-                    <a class="uk-logo uk-text-primary uk-text-bold" href="#">SAREH</a>
+                    <a class="uk-logo uk-text-primary uk-text-bold" >SAREH</a>
                 </div>
                 <div class="uk-text-center uk-margin-medium-bottom">
                     <h1 class="uk-letter-spacing-small">Crea una cuenta</h1>
@@ -48,10 +45,10 @@
                 <div class="uk-text-center uk-margin">
                     <p class="uk-margin-remove">O usar tu correo para registrarte</p>
                 </div>
-                <form>
+                <form id="formulario">
                     <div class="uk-width-1-1 uk-margin">
-                        <label class="uk-form-label" for="name">Nombre Completo</label>
-                        <input id="name" class="uk-input uk-form-large" type="text" placeholder="Ingresa tu nombre">
+                        <label class="uk-form-label" for="name">Usuario o Alias</label>
+                        <input id="name" class="uk-input uk-form-large" type="text" placeholder="Ingresa tu usuario o alias para ingresar">
                     </div>
                     <div class="uk-width-1-1 uk-margin">
                         <label class="uk-form-label" for="email">Correo</label>
@@ -59,18 +56,21 @@
                     </div>
                     <div class="uk-width-1-1 uk-margin">
                         <label class="uk-form-label" for="password">Contraseña</label>
-                        <input id="password" class="uk-input uk-form-large" type="password" placeholder="Ingresa tu contraseña">
+                        <input id="password" class="uk-input uk-form-large" type="password"
+                            placeholder="Ingresa tu contraseña">
                     </div>
                     <div class="uk-width-1-1 uk-text-center">
                         <button class="uk-button uk-button-primary uk-button-large">Registrarse</button>
                     </div>
                     <div class="uk-width-1-1 uk-margin uk-text-center">
-                        <p class="uk-text-small uk-margin-remove">¿Acepta los <a class="uk-link-border" href="#">terminos y condiciones</a> del servicio?</p>
+                        <p class="uk-text-small uk-margin-remove">Al registrarse acepta los <a class="uk-link-border"
+                                href="#">terminos y condiciones</a> del servicio.</p>
                     </div>
                 </form>
             </div>
         </div>
-        <div class="uk-width-1-2@m uk-padding-large uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-norepeat uk-background-blend-overlay uk-overlay-primary" style="background-image: url(https://source.unsplash.com/lcWj276XAfc/680x1000);" data-uk-height-viewport>
+        <div class="uk-width-1-2@m uk-padding-large uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-norepeat uk-background-blend-overlay uk-overlay-primary"
+            style="background-image: url(https://source.unsplash.com/lcWj276XAfc/680x1000);" data-uk-height-viewport>
             <div>
                 <div class="uk-text-center">
                     <h2 class="uk-h1 uk-letter-spacing-small">Bienvenido de vuelta</h2>
@@ -79,7 +79,7 @@
                     <p>Si ya tienes cuenta, inicia sesión ahora.</p>
                 </div>
                 <div class="uk-width-1-1 uk-text-center">
-                    <a href="/login" class="uk-button uk-button-primary uk-button-large">Iniciar Sesión</a>
+                    <a href="/sareh" class="uk-button uk-button-primary uk-button-large">Iniciar Sesión</a>
                 </div>
             </div>
         </div>
@@ -88,6 +88,7 @@
 </body>
 
 
+<script src="../js/main.js"></script>
 
 
 </html>
