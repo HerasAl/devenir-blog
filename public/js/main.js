@@ -1,10 +1,6 @@
 function article(params) {
-    
-
         $("#wel").hide();
         $("#notesDiv").show();
-
-
 }
 
 
@@ -55,6 +51,10 @@ UIkit.util.ready(function () {
 });
 
 genEmoji();
+
+$('#notes').click(() => {
+    article();  
+})
 
 $('#notes').click(() => {
     article();  

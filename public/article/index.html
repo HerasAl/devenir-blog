@@ -6,6 +6,12 @@
   <script src="../js/jquery-3.6.3.js"></script>
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@5.3.0/dist/simplebar.min.css" />
+
+  <link rel="stylesheet" href="./css/main.css" />
+
+
 
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png">
@@ -25,22 +31,43 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Inteligencia Artificial, no es Inteligencia Artificial.</title>
+  <title id="titleweb">La Inteligencia Artificial, no es Inteligencia Artificial.</title>
 </head>
 
 <body>
+
+  <div id="loader">
+    <div id="loader-overlay"></div>
+    <div id="loader-spinner"></div>
+  </div>
+
+
+
   <div class="uk-container">
+
     <div uk-grid>
+
+
       <div class="uk-width-2-3@m">
         <div class="uk-padding-large">
           <article class="uk-article">
-            <h1 class="uk-article-title">Por qué la Inteligencia Artificial, no es Inteligencia Artificial.</h1>
-            <p class="uk-article-meta">Escrito por <a href="https://www.facebook.com/HerasAlexis" target="_blank">Alexis
-                Heras</a> el 14 de
-              Febrero 2023. A traves de <a href="https://alexheras.web.app/" target="_blank">devenir.</a></p>
+            <h1 id="titulo" class="uk-article-title">Por qué la Inteligencia Artificial, no es Inteligencia Artificial.
+            </h1>
+            <p id="autor" class="uk-article-meta">Escrito por <a id="url_autor"
+                href="https://www.facebook.com/HerasAlexis" target="_blank">Alexis
+                Heras</a> el <a id="fecha"> 14/02/2023 </a> A traves de <a href="https://alexheras.web.app/"
+                target="_blank">devenir.</a></p>
 
-            <h2 class="uk-margin-small-bottom" id="a">Pareciera Magia</h2>
-            <p class="uk-margin-small-top">
+            <p class="uk-margin-small-bottom">También puedes escucharlo: </p>
+            <audio controls>
+              <source id="source_audio"
+                src="https://drive.google.com/u/0/uc?id=1aPGPl9NgLu0R1qdhnVHngNzQNwNxElUt&export=download"
+                type="audio/mpeg">
+              Tu navegador no soporta la reproducción de audio.
+            </audio>
+
+            <h2 class="uk-margin-small-bottom" id="subtitle_0">Pareciera Magia</h2>
+            <p id="introduccion" class="uk-margin-small-top">
               Mucho se habla del uso de la Inteligencia Artificial (IA) para realizar diversas tareas, como calcular la
               temperatura, generar imágenes a partir de una descripción, hasta escribir un artículo completo de algún
               tema (casi sin errores), el caso del famoso ‘Chat GPT’ desarrollado por la empresa OpenIA.
@@ -72,8 +99,8 @@
               cumple con todas las caracteristicas, pues de aquí parte la creación de la definición.
 
             </p>
-            <h3 class="uk-margin-small-bottom" id="a1">¿Que es realmente?</h3>
-            <p class="uk-margin-small-top">
+            <h3 id="subtitle_1" class="uk-margin-small-bottom" id="a1">¿Que es realmente?</h3>
+            <p id="desarrollo" class="uk-margin-small-top">
               Para comprender qué es Chat GPT, midjourney, DALL·E 2, entre otros sistemas muy de moda, debemos saber
               cómo funcionan, la base de estos nace en el campo del Machine Learning, que se centra en el desarrollo de
               algoritmos y técnicas de aprendizaje automático para que las computadoras pueden aprender a partir de
@@ -85,7 +112,7 @@
               actualizarse y mejorar su rendimiento. Hay muchos tipos diferentes de algoritmos de aprendizaje
               automático, desde regresión lineal hasta redes neuronales profundas, y cada uno es más adecuado para
               diferentes tipos de problemas y datos. De manera sencilla y sin tecnicismos, el aprendizaje automático es
-              una técnica de inteligencia artificial que permite a las computadoras aprender por sí mismas. Para lograr
+              una técnica de entrenamiento que permite a las computadoras aprender por sí mismas. Para lograr
               esto, se le proporciona una gran cantidad de datos y se les enseña a reconocer patrones en ellos. La
               máquina utiliza estos patrones para hacer predicciones y mejorar su capacidad para reconocer patrones en
               el futuro. Por ejemplo, imagina que queremos enseñar a una computadora a reconocer frutas. Le
@@ -100,8 +127,8 @@
 
             </p>
 
-            <h2 class="uk-margin-small-bottom" id="b">Entonces...</h2>
-            <p class="uk-margin-small-top">
+            <h2 id="subtitle_2" class="uk-margin-small-bottom" id="b">Entonces...</h2>
+            <p id="conclusion" class="uk-margin-small-top">
               Así es cómo puede cumplir con las dos primeras características dentro del concepto de inteligencia, pero
               para definir un término más preciso con su capacidad podríamos llamarlos ‘Modelos de generación y
               aprendizaje automático’, podemos encontrar; Modelos de procesamiento del Lenguaje Natural (Chat GPT),
@@ -114,6 +141,7 @@
               determinen una definición.
 
             </p>
+
 
           </article>
         </div>
@@ -129,9 +157,12 @@
                 <li><a href="#b">Entonces...</a></li>
 
               </ul>
+
+
+
             </div>
           </div>
-
+          <br>
 
           <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"
             data-src="../assets/dalle/roboto_model.png" uk-img>
@@ -147,38 +178,42 @@
 
 
             </div>
+
+
+
+
           </div>
-
         </div>
+
       </div>
-
-      <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
-        <div class="uk-offcanvas-bar">
-
-          <button class="uk-offcanvas-close" type="button" uk-close></button>
-
-          <h3>¿Te gusto?</h3>
-
-          <p>Ayudame compartiendo el articulo en: </p>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://alexheras.web.app/article/">Facebook</a>
-          <br>
-          <a
-            href="https://twitter.com/intent/tweet?text=Devenir publica: &url=https://alexheras.web.app/article/&hashtags=IA">Twitter</a>
-          <br>
-          <a href="https://api.whatsapp.com/send?text=Lee de devenir: https://alexheras.web.app/article/">Whatsapp</a>
-
-          <p>Puedes dejar tus opiniones o comentarios en tu publicación, así podremos retroalimentar la información.</p>
-
-
-
-
-
-
-
-        </div>
-      </div>
-
     </div>
+
+    <div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+      <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+        <h3>¿Te gustó?</h3>
+
+        <p>Presiona dondé deseas compartirlo: </p>
+        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://alexheras.web.app/article/"
+          uk-icon-link="facebook"><i class="fab fa-facebook"></i> Facebook</a>
+        <br>
+        <a target="_blank"
+          href="https://twitter.com/intent/tweet?text=Devenir pública: &url=https://alexheras.web.app/article/&hashtags=IA"><i
+            class="fab fa-twitter"></i> Twitter</a>
+        <br>
+        <a target="_blank"
+          href="https://api.whatsapp.com/send?text=Lee de devenir: https://alexheras.web.app/article/"><i
+            class="fab fa-whatsapp"></i> Whatsapp</a>
+
+        <p>Compartiendo me ayudas mucho, además, puedes dejar tus opiniones o comentarios en tu publicación, así
+          podremos retroalimentar la información.</p>
+
+      </div>
+    </div>
+
+  </div>
 
 
 </body>
