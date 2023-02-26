@@ -131,4 +131,4 @@ function getUserData() {
         // Puedes hacer cualquier operación con el objeto JSON en este punto, como enviarlo a un servidor.
       })
       .catch(error => console.error(error));
-  }
+}
