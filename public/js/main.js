@@ -1,17 +1,10 @@
-function article(params) {
+function articles(params) {
         $("#wel").hide();
         $("#notesDiv").show();
 }
-
-
-function genEmoji() {
-    fetch('https://gist.githubusercontent.com/oliveratgithub/0bf11a9aff0d6da7b46f1490f86a71eb/raw/d8e4b78cfe66862cf3809443c1dba017f37b61db/emojis.json')
-    .then((response) => response.json())
-    .then((json) =>{
-
-        $('#texto_wel').html('devenir es un blog personal en dondé publicare notas, articulos de opinion y código. Espero te guste '+json['emojis'][random(0,json['emojis'].length)]['emoji']);
-
-    });
+function inicio(params) {
+    $("#notesDiv").hide();
+    $("#wel").show();
 }
 
 
@@ -34,28 +27,11 @@ function light() {
     
 }
 
-UIkit.util.ready(function () {
-
-    var bar = document.getElementById('progress');
-
-    var animate = setInterval(function () {
-
-        bar.value += randomNumber();
-
-        if (bar.value >= bar.max) {
-            clearInterval(animate);
-        }
-
-    }, 1000);
-
-});
-
-genEmoji();
 
 $('#notes').click(() => {
-    article();  
+    articles();  
 })
 
-$('#notes').click(() => {
-    article();  
+$('#inicio').click(() => {
+    inicio();
 })
