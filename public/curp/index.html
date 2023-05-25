@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de CURP</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            <h3 class="text-center">Generador de CURP (UPChi)</h3>
+          </div>
+          <div class="card-body">
+            <form id="curpForm" class="needs-validation" novalidate>
+              <div class="form-group">
+                <label for="nombre">Nombre(s):</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                <div class="invalid-feedback">Por favor ingrese su(s) nombre(s).</div>
+              </div>
+              <div class="form-group">
+                <label for="apellidoPaterno">Apellido Paterno:</label>
+                <input type="text" class="form-control" id="apellidoPaterno" name="apellidoPaterno" required>
+                <div class="invalid-feedback">Por favor ingrese su apellido paterno.</div>
+              </div>
+              <div class="form-group">
+                <label for="apellidoMaterno">Apellido Materno:</label>
+                <input type="text" class="form-control" id="apellidoMaterno" name="apellidoMaterno" required>
+                <div class="invalid-feedback">Por favor ingrese su apellido materno.</div>
+              </div>
+              <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento" required>
+                <div class="invalid-feedback">Por favor ingrese su fecha de nacimiento.</div>
+              </div>
+              <div class="form-group">
+                <label for="genero">Género:</label>
+                <select class="form-control" id="genero" name="genero" required>
+                  <option value="">Seleccionar</option>
+                  <option value="H">Hombre</option>
+                  <option value="M">Mujer</option>
+                </select>
+                <div class="invalid-feedback">Por favor seleccione su género.</div>
+              </div>
+              <div class="form-group">
+                <label for="estado">Estado de Nacimiento:</label>
+                <input type="text" class="form-control" id="estado" name="estado" required>
+                <div class="invalid-feedback">Por favor ingrese su estado de nacimiento.</div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Generar CURP</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Script para generar CURP -->
+  <script>
+    // Función para generar la CURP
+    function generarCURP() {
+      // Obtener los valores del formulario
+      var nombre = document.getElementById('nombre').value.trim();
+      var apellidoPaterno = document.getElementById('apellidoPaterno').value.trim();
+      var apellidoMaterno = document.getElementById('apellidoMaterno').value.trim();
+      var fechaNacimiento = document.getElementById('fechaNacimiento').value.trim();
+      var genero = document.getElementById('genero').value.trim();
+      var estado = document.getElementById('estado').value.trim();
+  
+      var curp = genCurp(nombre, apellidoPaterno, apellidoMaterno, fechaNacimiento, genero, estado);
+
+      console.log(curp);
+    }
+  
+    // Evento de submit del formulario
+    document.getElementById('curpForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      generarCURP();
+    });
+  </script>
+  
+  <script src="main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Validación de formulario utilizando Bootstrap
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        var form = document.getElementById('curpForm');
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      }, false);
+    })();
+  </script>
+</body>
+
+</html>
