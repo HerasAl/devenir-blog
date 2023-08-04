@@ -13,9 +13,9 @@ form.addEventListener('submit', (event) => {
 
   // Crear un objeto JSON con los datos del formulario
   const formData = {
-    name: name,
-    email: email,
-    password: password
+    user: name,
+    pwd: password,
+    correo: email
   };
 
   // Imprimir el objeto JSON en la consola
@@ -37,7 +37,7 @@ function send(params) {
   };
   
   // Enviar la solicitud a la API
-  fetch('http://127.0.0.1:3000/reg', options)
+  fetch('http://127.0.0.1:5000/altaUser', options)
     .then(response => {
       if (!response.ok) {
         throw new Error('La solicitud no fue exitosa');
@@ -48,14 +48,26 @@ function send(params) {
       if (data['status']==1){
         clean();
         UIkit.notification({
-          message: '¡Registrado!',
+          message: data['message'],
           status: 'primary',
           pos: 'top-right',
-          timeout: 5000
+          timeout: 3000
       });
       
+      // Redireccionar a http://localhost:8000/sareh/ después de 5 segundos
+    setTimeout(() => {
+      window.location.href = 'http://localhost:8000/sareh/';
+    }, 2500); // 5000 milisegundos = 5 segundos
+
+      }else{
+        clean();
+        UIkit.notification({
+          message: data['message'],
+          status: 'secondary',
+          pos: 'top-right',
+          timeout: 3000
+      });
       }
-      console.log(data);
     })
     .catch(error => {
       console.error(error);

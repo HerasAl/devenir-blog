@@ -53,6 +53,7 @@ abbr[title] {
   text-decoration: underline dotted;
   /* 2 */
   -webkit-text-decoration-style: dotted;
+  text-decoration-style: dotted;
 }
 /*
  * Add the correct font weight in Chrome, Edge, and Safari.
@@ -1230,6 +1231,7 @@ button.uk-icon:not(:disabled) {
 .uk-range {
   /* 1 */
   -webkit-appearance: none;
+  appearance: none;
   /* 2 */
   box-sizing: border-box;
   /* 3 */
@@ -1414,6 +1416,7 @@ button.uk-icon:not(:disabled) {
 .uk-input,
 .uk-textarea {
   -webkit-appearance: none;
+  appearance: none;
 }
 /*
  * 1. Prevent content overflow if a fixed width is used

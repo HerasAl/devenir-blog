@@ -3,14 +3,17 @@
 
 
 <head>
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.9/dist/css/uikit.min.css" />
+    <!--UIkit-->
 
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.9/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.9/dist/js/uikit-icons.min.js"></script>
+<link rel="stylesheet" href="../../css/uikit.min.css" />
+<script src="../../js/uikit.min.js"></script>
+<script src="../../js/uikit-icons.min.js"></script>
+<script src="../../js/jquery-3.6.3.js"></script>
 
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="../../assets/icons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16x16.png" />
+<link rel="manifest" href="../../assets/icons/site.webmanifest" />
 
 
     <meta charset="UTF-8">
@@ -21,29 +24,14 @@
 </head>
 
 <body>
-
     <div class="uk-grid uk-grid-collapse" data-uk-grid>
-        <div class="uk-width-1-2@m uk-padding-large uk-flex uk-flex-middle uk-flex-center" data-uk-height-viewport>
+        <div class="uk-width-1-2@m uk-padding-medium uk-flex uk-flex-middle uk-flex-center" data-uk-height-viewport>
             <div class="uk-width-3-4@s">
                 <div class="uk-text-center uk-margin-bottom">
                     <a class="uk-logo uk-text-primary uk-text-bold" >SAREH</a>
                 </div>
                 <div class="uk-text-center uk-margin-medium-bottom">
                     <h1 class="uk-letter-spacing-small">Crea una cuenta</h1>
-                </div>
-                <div class="uk-grid uk-child-width-auto uk-grid-small uk-flex uk-flex-center uk-margin" data-uk-grid>
-                    <div>
-                        <a href="#" data-uk-icon="icon: facebook" class="uk-icon-button uk-icon-button-large"></a>
-                    </div>
-                    <div>
-                        <a href="#" data-uk-icon="icon: google" class="uk-icon-button uk-icon-button-large"></a>
-                    </div>
-                    <div>
-                        <a href="#" data-uk-icon="icon: github" class="uk-icon-button uk-icon-button-large"></a>
-                    </div>
-                </div>
-                <div class="uk-text-center uk-margin">
-                    <p class="uk-margin-remove">O usar tu correo para registrarte</p>
                 </div>
                 <form id="formulario">
                     <div class="uk-width-1-1 uk-margin">
@@ -70,7 +58,7 @@
             </div>
         </div>
         <div class="uk-width-1-2@m uk-padding-large uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-norepeat uk-background-blend-overlay uk-overlay-primary"
-            style="background-image: url(https://source.unsplash.com/lcWj276XAfc/680x1000);" data-uk-height-viewport>
+            style="background-image: url(../assets/background.jpg);" data-uk-height-viewport>
             <div>
                 <div class="uk-text-center">
                     <h2 class="uk-h1 uk-letter-spacing-small">Bienvenido de vuelta</h2>
@@ -84,7 +72,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 
