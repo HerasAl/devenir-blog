@@ -46,8 +46,12 @@ function send(params) {
                     message: "<span uk-icon='icon: unlock'></span> " + data['message'],
                     status: 'primary',
                     pos: 'top-right',
-                    timeout: 3000
+                    timeout: 2500
                 });
+                // Redireccionar a http://localhost:5000 después de 2.5 segundos
+                setTimeout(() => {
+                    window.location.href = 'http://localhost:5000?sareh='+data['tkn'];
+                }, 2500); // 5000 milisegundos = 5 segundos
             } else {
                 UIkit.notification({
                     message: "<span uk-icon='icon: warning'></span> " + data['message'],
