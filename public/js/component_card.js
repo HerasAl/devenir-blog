@@ -8,7 +8,7 @@ class Card {
     crearElemento() {
         const cardContainer = $('<a>', { href: this.data.link, target: '_blank' });
 
-        const card = $('<div>', { class: 'uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-grid', 'uk-grid': '' });
+        const card = $('<div>', {id: this.data.id, class: 'uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin uk-grid', 'uk-grid': '' });
         cardContainer.append(card);
 
         const mediaLeft = $('<div>', { class: 'uk-card-media-left uk-cover-container uk-first-column' });
@@ -18,8 +18,12 @@ class Card {
         mediaLeft.append(img);
         mediaLeft.append($('<canvas width="600" height="400">'));
 
+        const cardBodyWrapper = $('<div>');  // Div agregado
+        card.append(cardBodyWrapper);
+    
         const cardBody = $('<div>', { class: 'uk-card-body' });
-        card.append(cardBody);
+        cardBodyWrapper.append(cardBody);  // Agregado el cardBody al wrapper
+    
 
         cardBody.append($('<h3>', { class: 'uk-card-title' }).text(this.data.titulo));
         cardBody.append($('<p>').text(this.data.descripcion));
