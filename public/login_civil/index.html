@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es-MX" >
+<head>
+  <meta charset="UTF-8">
+  <title>Biblioteca UPChi</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<section class="user">
+  <div class="user_options-container">
+    <div class="user_options-text">
+      <div class="user_options-unregistered">
+        <h2 class="user_unregistered-title">¿Aún no tienes cuenta?</h2>
+        <p class="user_unregistered-text">Usa tu correo institucional para registrarte y acceder a los medios digitales de la UPChi</p>
+        <button class="user_unregistered-signup" id="signup-button">Registrarse ahora</button>
+      </div>
+
+      <div class="user_options-registered">
+        <h2 class="user_registered-title">¿Ya tienes cuenta?</h2>
+        <p class="user_registered-text">Accede con tus credenciales de acceso para obtener los mejores libros y acceso educativo de la UPChi</p>
+        <button class="user_registered-login" id="login-button">Acceder</button>
+      </div>
+    </div>
+    
+    <div class="user_options-forms" id="user_options-forms">
+      <div class="user_forms-login">
+        <h2 class="forms_title">Iniciar Sesión</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" placeholder="Correo o Usuario" class="forms_field-input" required autofocus />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="Contraseña" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <button type="button" class="forms_buttons-forgot">¿Se te olvidó la contraseña?</button>
+            <input type="submit" value="Ingresar" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+      <div class="user_forms-signup">
+        <h2 class="forms_title">Llena los datos</h2>
+        <form class="forms_form">
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="text" placeholder="Nombre Completo" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="email" placeholder="Conrreo Institucional" class="forms_field-input" required />
+            </div>
+            <div class="forms_field">
+              <input type="password" placeholder="Contraseña" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <input type="submit" value="Registrarse" class="forms_buttons-action">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recuadro con la imagen en la parte inferior derecha -->
+<div class="floating-image" id="floatingImageContainer">
+
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
