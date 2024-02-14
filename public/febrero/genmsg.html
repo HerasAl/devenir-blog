@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de URL Encriptada</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+
+<body>
+
+    <form id="formulario">
+        <label>
+            <input type="radio" name="opcion" value="fantasmitas" checked> Fantasmitas
+        </label>
+        <label>
+            <input type="radio" name="opcion" value="flores-coras"> Flores Coras
+        </label>
+        <br>
+        <label>
+            Texto a encriptar:
+            <input type="text" id="textoAEncriptar">
+        </label>
+        <br>
+        <button type="button" onclick="generarURL()">Generar URL</button>
+        <br>
+        <textarea id="urlGenerada" rows="4" cols="50"></textarea>
+        <button type="button" onclick="copiarAlPortapapeles()">Copiar al Portapapeles</button>
+    </form>
+
+    <script>
+        function generarURL() {
+            var opcionSeleccionada = document.querySelector('input[name="opcion"]:checked').value;
+            var textoAEncriptar = document.getElementById('textoAEncriptar').value;
+
+            var claveSecreta = "RupaTrupa99";
+            var textoEncriptado = CryptoJS.AES.encrypt(textoAEncriptar, claveSecreta).toString();
+            var urlBase = "https://alexheras.web.app/febrero/";
+
+            if (opcionSeleccionada === "fantasmitas") {
+                var urlGenerada = urlBase + "fantasmitas/?msg=" + encodeURIComponent(textoEncriptado);
+            } else if (opcionSeleccionada === "flores-coras") {
+                var urlGenerada = urlBase + "flores-coras/?msg=" + encodeURIComponent(textoEncriptado);
+            }
+
+            document.getElementById('urlGenerada').value = urlGenerada;
+        }
+
+        function copiarAlPortapapeles() {
+            var urlGenerada = document.getElementById('urlGenerada');
+            urlGenerada.select();
+            document.execCommand('copy');
+            alert("URL copiada al portapapeles: " + urlGenerada.value);
+        }
+    </script>
+
+</body>
+
+</html>
