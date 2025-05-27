@@ -1,80 +1,10 @@
-#loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-}
-
-#loader-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-#loader-spinner {
-    animation: spin 2s linear infinite;
-    border: 10px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 10px solid #3498db;
-    height: 80px;
-    left: 50%;
-    position: fixed;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-}
-
-/* Regla de medios para tabletas y dispositivos móviles */
-@media only screen and (max-width: 768px) {
-    #loader-spinner {
-        height: 50px;
-        width: 50px;
-    }
-}
-
-/* Regla de medios para smartphones */
-@media only screen and (max-width: 480px) {
-    #loader-spinner {
-        height: 30px;
-        width: 30px;
-    }
-}
-
-/* Regla de medios para pantallas de escritorio */
-@media only screen and (min-width: 769px) {
-    #loader-spinner {
-        height: 80px;
-        width: 80px;
-    }
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background-color: #ffffff;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #2477c5;
-    border-radius: 10px;
-    border: 1px solid #ffffff;
-  }
-  
+#loader{position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;}
+#loader-overlay{background-color:rgba(0,0,0,0.5);backdrop-filter:blur(5px);height:100%;left:0;position:fixed;top:0;width:100%;}
+#loader-spinner{animation:spin 2s linear infinite;border:10px solid #f3f3f3;border-radius:50%;border-top:10px solid #3498db;height:80px;left:50%;position:fixed;top:50%;transform:translate(-50%,-50%);width:80px;}
+@media only screen and (max-width:768px){#loader-spinner{height:50px;width:50px;}}
+@media only screen and (max-width:480px){#loader-spinner{height:30px;width:30px;}}
+@media only screen and (min-width:769px){#loader-spinner{height:80px;width:80px;}}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background-color:#fff;}
+::-webkit-scrollbar-thumb{background-color:#2477c5;border-radius:10px;border:1px solid #fff;}

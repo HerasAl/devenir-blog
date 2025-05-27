@@ -1,35 +1,6 @@
-.svg-white {
-  fill: white;
-}
-
-.movimiento {
-  animation: prueba 1.0s forwards;
-}
-
-@keyframes prueba {
-  100% {
-    transform: translateY(-5%);
-  }
-
-  50% {
-    opacity: 0;
-    display: none;
-  }
-}
-
-#link{
-  color: black;
-  text-decoration: none;
-}
-.custom-card {
-  position: relative;
-  display: inline-block;
-  transition: transform 0.3s, box-shadow 0.3s;
-  transform-origin: center center;
-}
-
-.uk-card-default:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
+.svg-white{fill:white;}
+.movimiento{animation:prueba 1.0s forwards;}
+@keyframes prueba{100%{transform:translateY(-5%);}50%{opacity:0;display:none;}}
+#link{color:black;text-decoration:none;}
+.custom-card{position:relative;display:inline-block;transition:transform 0.3s,box-shadow 0.3s;transform-origin:center center;}
+.uk-card-default:hover{box-shadow:0 0 20px rgba(0,0,0,0.2);transform:scale(1.05);transition:box-shadow 0.3s ease,transform 0.3s ease;}
