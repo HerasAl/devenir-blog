@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/uikit.min.css" />
   <script src="js/uikit.min.js"></script>
   <script src="js/uikit-icons.min.js"></script>
-  <script src="js/jquery-3.6.3.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png" />
@@ -58,7 +58,11 @@
             <li id="article1">
               <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                  <img src="./assets/dalle/roboto_model.png" width="500" height="300" alt="" />
+                  <picture>
+                    <source srcset="./assets/dalle/roboto_model.webp" type="image/webp">
+                    <source srcset="./assets/dalle/roboto_model.png" type="image/png">
+                    <img src="./assets/dalle/roboto_model.png" width="500" height="300" alt="">
+                  </picture>
                 </div>
                 <div class="uk-card-body">
                   <h3 class="uk-card-title">
@@ -73,7 +77,11 @@
             <li id="article2">
               <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                  <img src="./assets/bing/5G_Portada.jpeg" width="500" height="300" alt="" />
+                  <picture>
+                    <source srcset="./assets/bing/5G_Portada.webp" type="image/webp">
+                    <source srcset="./assets/bing/5G_Portada.jpeg" type="image/jpeg">
+                    <img src="./assets/bing/5G_Portada.jpeg" width="500" height="300" alt="">
+                  </picture>
                 </div>
                 <div class="uk-card-body">
                   <h3 class="uk-card-title">
@@ -88,7 +96,11 @@
             <li>
               <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                  <img src="./assets/difussion/write_person.png" width="1800" height="1200" alt="" />
+                  <picture>
+                    <source srcset="./assets/difussion/write_person.webp" type="image/webp">
+                    <source srcset="./assets/difussion/write_person.png" type="image/png">
+                    <img src="./assets/difussion/write_person.png" width="1800" height="1200" alt="">
+                  </picture>
                 </div>
                 <div class="uk-card-body">
                   <h3 class="uk-card-title">Proximamente</h3>
