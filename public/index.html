@@ -1,131 +1,365 @@
 <!DOCTYPE html>
-<html lang="es-MX">
-
+<html lang="es" class="light">
 <head>
-  <!-- UIkit CSS -->
-
-  <link rel="stylesheet" href="css/uikit.min.css" />
-  <script src="js/uikit.min.js"></script>
-  <script src="js/uikit-icons.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png" />
-  <link rel="manifest" href="./assets/icons/site.webmanifest" />
-
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>devenir</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Devenir — Blog personal sobre tecnología, diseño y pensamiento." />
+  <title>Devenir · Feed</title>
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Fonts precargadas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Material Symbols + fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet" />
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="./css/devenir.css" />
 </head>
 
 <body>
-  <div class="uk-position-relative uk-background-center-center uk-background-cover" uk-height-viewport>
-    <div class="uk-position-cover uk-cover-container">
-      <video autoplay loop playsinline muted uk-cover>
-        <source src="assets/video/cover_code.mp4" type="video/mp4" />
-      </video>
+
+<!-- ════════════════════════════════════════
+     HEADER
+     ════════════════════════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="container inner">
+
+    <!-- Marca -->
+    <a href="/" class="brand" aria-label="Devenir — inicio">Devenir</a>
+
+    <!-- Nav desktop -->
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="index.html" class="is-active">Biblioteca</a>
+      <a hidden href="#">Explorar</a>
+      <a hidden href="#">Archivo</a>
+      <a hidden href="#">Colecciones</a>
+    </nav>
+
+    <!-- Acciones -->
+    <div class="flex-gap-md" style="margin-left:auto;">
+      <!-- Búsqueda -->
+      <div class="search-bar neu-carved" role="search">
+        <span class="icon icon--sm c-secondary" aria-hidden="true">search</span>
+        <input type="search" placeholder="Buscar en el archivo…" aria-label="Buscar artículos" />
+      </div>
+
+      <!-- Notificaciones -->
+      <button class="icon-btn neu-btn" aria-label="Notificaciones">
+        <span class="icon c-primary">notifications</span>
+      </button>
+
+      <!-- Configuración -->
+      <!-- Theme Toggle (reemplaza el botón de settings) -->
+<button 
+  class="icon-btn neu-btn js-theme-toggle" 
+  aria-label="Cambiar tema"
+  data-theme-toggle
+>
+  <span class="icon c-primary js-theme-icon">dark_mode</span>
+</button>
+
+      <!-- Avatar -->
+      <div class="avatar neu-extruded" aria-hidden="true">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVGE1N3Lh36CYmSyHr7cZUfNPSmysIfH3i-d0qeryarQPM5xHbGkyDuz8PMEInl2VJxpCpdxm6R_HVQ88C_dx6xazWI1yotRTNwkoESau2vGUW2wH7T35lntwM74LLJwJ1cb4uPqNsR5mNiGttA5trBPycRcyc_7-fPGLdgTsTxcujkJpETl3H2EBiBDLxIiFQDnu16evjAdNOgqGipuFpEfqjw2J0NAswhsfEytU_8_nwq10GOj2edQ_Mt1xqWkuglEQ3ElmAI3Q"
+          alt="Foto de perfil"
+          loading="lazy"
+        />
+      </div>
     </div>
-    <nav class="uk-navbar-container uk-navbar-transparent uk-light">
-      <div class="uk-container">
-        <div uk-navbar>
-          <div class="uk-animation-scale-up">
-            <a class="uk-navbar-item uk-logo uk-width-1-6@m">
-              <img src="assets/svg/logo.svg" class="uk-flex-between uk-flex-small" uk-svg />
+
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════
+     MAIN
+     ════════════════════════════════════════ -->
+<main class="container" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
+  <div class="main-layout">
+
+    <!-- ── SIDEBAR (solo desktop) ────────── -->
+    <aside class="sidebar" aria-label="Navegación lateral">
+
+      <!-- Perfil 
+      <div hidden class="sidebar-profile">
+        <p class="sidebar-profile__name">Autor</p>
+        <p class="sidebar-profile__role">Espacio de escritura personal</p>
+        <button class="neu-btn load-more-btn" style="width:100%; margin-top:8px; justify-content:center;">
+          <span class="icon icon--sm">add</span>
+          Nueva entrada
+        </button>
+      </div>
+      -->
+
+      <!-- Links de nav -->
+      <nav class="sidebar-nav" aria-label="Secciones">
+        <a href="#" class="is-active">
+          <span class="icon icon--sm icon--fill">home</span>
+          <span class="text-label-md">Inicio</span>
+        </a>
+        <a href="#">
+          <span class="icon icon--sm">explore</span>
+          <span class="text-label-md">Descubrir</span>
+        </a>
+        <a href="#">
+          <span class="icon icon--sm">menu_book</span>
+          <span class="text-label-md">Lista de lectura</span>
+        </a>
+        <a href="#">
+          <span class="icon icon--sm">edit_note</span>
+          <span class="text-label-md">Cuaderno</span>
+        </a>
+        <a href="#">
+          <span class="icon icon--sm">history</span>
+          <span class="text-label-md">Historial</span>
+        </a>
+      </nav>
+
+      <!-- Footer sidebar -->
+      <div class="sidebar-footer">
+        <a href="#">
+          <span class="icon icon--sm">help</span> Soporte
+        </a>
+        <a href="#">
+          <span class="icon icon--sm">shield</span> Privacidad
+        </a>
+      </div>
+    </aside>
+
+    <!-- ── CONTENIDO PRINCIPAL ────────────── -->
+    <section class="main-content content-col" aria-label="Artículos">
+
+      <!-- Chips de categoría -->
+      <div class="chip-row" role="tablist" aria-label="Filtrar por categoría">
+        <button class="chip is-active" role="tab" aria-selected="true">Todo</button>
+        <button class="chip" role="tab" aria-selected="false">Tecnología</button>
+        <button class="chip" role="tab" aria-selected="false">Cultura</button>
+        <button class="chip" role="tab" aria-selected="false">Diseño</button>
+        <button class="chip" role="tab" aria-selected="false">Filosofía</button>
+        <button class="chip" role="tab" aria-selected="false">Ciencia</button>
+      </div>
+
+      <!-- ── ARTÍCULO DESTACADO ───────────── -->
+      <article class="featured-card fade-in" aria-label="Artículo destacado">
+
+        <!-- Barra de progreso de lectura -->
+        <div class="featured-progress">
+          <div class="progress-track">
+            <div class="progress-fill gradient-brand js-reading-progress" style="width:20%;"></div>
+          </div>
+        </div>
+
+        <!-- Imagen -->
+        <div class="featured-card__image">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRp-zuurx7kYvWNLXCNsspTvPClDZ_7_LEhc3SNYkO-GHEXZiuFvoJe3E1LLOk1KKPt9_LkhoGsdtwg3MnEhK8EeVqsR9EEnDpr57_MGyVWPG6Mi9aJEQig7bH32VGg0pDosys-3x5pScQN3w11BDfy6jUr8r4SQ1PWJBG7Iep9zutbKXufo0voHesQYY0gwwoF_MyNOvdG_tL7U34_5lQGk9YJmOSsWqvT8v5NXDsbw3h9rt9N3Nv5zAB4ymxZ4w9FBicn46eI_k"
+            alt="Pergamino digital texturizado con trazos de luz cian"
+            loading="eager"
+          />
+
+          <!-- Texto sobre la imagen -->
+          <div class="featured-card__overlay">
+            <span class="featured-badge gradient-brand">Ensayo destacado</span>
+            <h1 class="featured-card__title">El Renacimiento de la Epigrafía Digital</h1>
+          </div>
+        </div>
+
+        <!-- Cuerpo -->
+        <div class="featured-card__body">
+          <p class="featured-card__excerpt">
+            Cómo las técnicas modernas de archivado preservan la naturaleza efímera del discurso
+            digital del siglo XXI para el acceso institucional del futuro.
+          </p>
+          <div class="featured-card__meta">
+            <div class="flex-gap-sm">
+              <span class="text-label-md c-primary">Dr. Alistair Thorne</span>
+              <span class="dot-separator"></span>
+              <span class="text-label-md c-secondary">12 min de lectura</span>
+            </div>
+            <button class="bookmark-btn neu-btn icon-btn" aria-label="Guardar artículo" data-saved="false">
+              <span class="icon">bookmark</span>
+            </button>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- ── GRID DE ARTÍCULOS ──────────────── -->
+      <div class="articles-grid" aria-label="Lista de artículos">
+
+        <!-- Card 1 -->
+        <article class="article-card fade-in">
+          <div class="article-card__header">
+            <span class="article-card__tag">Tecnología</span>
+            <button class="icon-btn" aria-label="Más opciones" style="color:var(--outline-variant)">
+              <span class="icon icon--sm">more_horiz</span>
+            </button>
+          </div>
+          <h2 class="article-card__title">Paleografía Algorítmica</h2>
+          <p class="article-card__excerpt">
+            Descifrando pergaminos antiguos mediante imágenes multiespectrales y reconstrucción
+            por redes neuronales en los archivos del Vaticano.
+          </p>
+          <div class="article-card__footer">
+            <span class="text-label-md c-secondary">14 oct 2024</span>
+            <a href="./articulo.html" class="read-link">
+              Leer <span class="icon icon--sm">arrow_forward</span>
             </a>
           </div>
-          <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav uk-visible@s">
-              <li>
-                <div class="uk-navbar-item uk-animation-scale-up">
-                  <a href="#" class="uk-button uk-button-small uk-button-default">Subir</a>
-                </div>
-              </li>
-            </ul>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="article-card fade-in">
+          <div class="article-card__header">
+            <span class="article-card__tag">Filosofía</span>
+            <button class="icon-btn" aria-label="Más opciones" style="color:var(--outline-variant)">
+              <span class="icon icon--sm">more_horiz</span>
+            </button>
           </div>
-        </div>
+          <h2 class="article-card__title">Ética del Scroll Infinito</h2>
+          <p class="article-card__excerpt">
+            Un estudio fenomenológico sobre la erosión del espacio contemplativo en la
+            arquitectura moderna de la información.
+          </p>
+          <div class="article-card__footer">
+            <span class="text-label-md c-secondary">12 oct 2024</span>
+            <a href="#" class="read-link">
+              Leer <span class="icon icon--sm">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3 — wide con imagen -->
+        <article class="article-card article-card--wide fade-in">
+          <div class="card-inner">
+            <div class="card-thumb">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL_i58n6vQ9cRswUGt52Kr0CW_KBMkGDqM7OpMmpptnnkb307ovVT_VWus12rRQ33y4kLpLtvBEZFvrCTOTEK82wEQi7JxGJ7nZO_Ha533d2ZKKbBgdSm89jv1LFTxK6UR3-lG4qLaIbTa2eZr9J4Epgf5dXyf9iJh3pSTYqHNf6dGBxqjEII0PVfiDY-i8RpkZHgZJWX0i2tmp5ivtv_RVxkiHZSaA1LQO9BSOuwWyKaOKaVvDzOw2VjJpM5MiVSUh5Qi7C6RJmw"
+                alt="Interior arquitectónico minimalista"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-content">
+              <span class="article-card__tag">Diseño</span>
+              <h2 class="article-card__title" style="font-size:20px;">Escolástica Brutalista</h2>
+              <p class="article-card__excerpt clamp-2">
+                Redefiniendo las interfaces universitarias a través de la honestidad estructural
+                y el funcionalismo en bruto.
+              </p>
+              <span class="text-label-md c-secondary" style="margin-top:6px;">
+                8 min · 42 anotaciones
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="article-card fade-in">
+          <div class="article-card__header">
+            <span class="article-card__tag">Cultura</span>
+            <button class="icon-btn" aria-label="Más opciones" style="color:var(--outline-variant)">
+              <span class="icon icon--sm">more_horiz</span>
+            </button>
+          </div>
+          <h2 class="article-card__title">Memoria y Olvido Digital</h2>
+          <p class="article-card__excerpt">
+            Reflexiones sobre la permanencia de los datos y el derecho al olvido en la era
+            de los modelos de lenguaje de gran escala.
+          </p>
+          <div class="article-card__footer">
+            <span class="text-label-md c-secondary">9 oct 2024</span>
+            <a href="#" class="read-link">
+              Leer <span class="icon icon--sm">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="article-card fade-in">
+          <div class="article-card__header">
+            <span class="article-card__tag">Ciencia</span>
+            <button class="icon-btn" aria-label="Más opciones" style="color:var(--outline-variant)">
+              <span class="icon icon--sm">more_horiz</span>
+            </button>
+          </div>
+          <h2 class="article-card__title">El Tiempo como Material</h2>
+          <p class="article-card__excerpt">
+            Explorando la cronotopología en la física cuántica y su resonancia con las
+            narrativas filosóficas del devenir.
+          </p>
+          <div class="article-card__footer">
+            <span class="text-label-md c-secondary">5 oct 2024</span>
+            <a href="#" class="read-link">
+              Leer <span class="icon icon--sm">arrow_forward</span>
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /articles-grid -->
+
+      <!-- Cargar más -->
+      <div class="load-more-wrapper">
+        <button class="load-more-btn neu-btn js-load-more" aria-label="Cargar más artículos">
+          Cargar más
+          <span class="icon icon--sm">sync</span>
+        </button>
       </div>
-    </nav>
-    <div id="contenedor" class="uk-position-relative uk-container uk-container-small uk-flex uk-flex-middle"
-      uk-height-viewport="offset-top: true">
-      <div id="wel" class="uk-section uk-section-regular uk-width-1-1 uk-light movimiento">
 
-      </div>
+    </section><!-- /main-content -->
+  </div><!-- /main-layout -->
+</main>
 
-      <div id="notesDiv" style="display: none" class="uk-slider-container-offset" uk-slider>
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
-          <ul class="uk-slider-items uk-child-width-1-3@s uk-grid">
-            <li id="article1">
-              <div class="uk-card uk-card-default">
-                <div class="uk-card-media-top">
-                  <picture>
-                    <source srcset="./assets/dalle/roboto_model.webp" type="image/webp">
-                    <source srcset="./assets/dalle/roboto_model.png" type="image/png">
-                    <img src="./assets/dalle/roboto_model.png" width="500" height="300" alt="">
-                  </picture>
-                </div>
-                <div class="uk-card-body">
-                  <h3 class="uk-card-title">
-                    La Inteligencia Artificial, no es Inteligencia Artificial
-                  </h3>
-                  <a href="./article/0" class="uk-button uk-button-secondary uk-button-small">Presiona aquí para
-                    leer</a>
-                </div>
-              </div>
-            </li>
 
-            <li id="article2">
-              <div class="uk-card uk-card-default">
-                <div class="uk-card-media-top">
-                  <picture>
-                    <source srcset="./assets/bing/5G_Portada.webp" type="image/webp">
-                    <source srcset="./assets/bing/5G_Portada.jpeg" type="image/jpeg">
-                    <img src="./assets/bing/5G_Portada.jpeg" width="500" height="300" alt="">
-                  </picture>
-                </div>
-                <div class="uk-card-body">
-                  <h3 class="uk-card-title">
-                    Tecnología 5G
-                  </h3>
-                  <a href="./article/1" class="uk-button uk-button-secondary uk-button-small">Presiona aquí para
-                    leer</a>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="uk-card uk-card-default">
-                <div class="uk-card-media-top">
-                  <picture>
-                    <source srcset="./assets/difussion/write_person.webp" type="image/webp">
-                    <source srcset="./assets/difussion/write_person.png" type="image/png">
-                    <img src="./assets/difussion/write_person.png" width="1800" height="1200" alt="">
-                  </picture>
-                </div>
-                <div class="uk-card-body">
-                  <h3 class="uk-card-title">Proximamente</h3>
-                  <p>
-                    Encontrarás más articulos aquí pronto...
-                  </p>
-                </div>
-              </div>
-            </li>
-          </ul>
-
-          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
-            uk-slider-item="previous"></a>
-          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
-            uk-slider-item="next"></a>
-        </div>
-
-        <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
-      </div>
+<!-- ════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container inner">
+    <div>
+      <p class="site-footer__brand">Devenir</p>
+      <p class="site-footer__copy">© 2024 Devenir. Escritura en movimiento.</p>
     </div>
+    <nav class="site-footer__links" aria-label="Links del pie de página">
+      <a href="#">Política editorial</a>
+      <a href="#">Acceso institucional</a>
+      <a href="#">RSS</a>
+      <a href="#">Contacto</a>
+    </nav>
   </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════
+     NAV MÓVIL (bottom bar)
+     ════════════════════════════════════════ -->
+<nav class="mobile-nav" aria-label="Navegación móvil">
+  <a href="#" class="is-active" aria-current="page">
+    <span class="icon icon--sm icon--fill">home</span>
+    <span>Inicio</span>
+  </a>
+  <a href="#">
+    <span class="icon icon--sm">explore</span>
+    <span>Descubrir</span>
+  </a>
+  <a href="#">
+    <span class="icon icon--sm">menu_book</span>
+    <span>Biblioteca</span>
+  </a>
+  <a href="#">
+    <span class="icon icon--sm">person</span>
+    <span>Perfil</span>
+  </a>
+</nav>
+
+
+<!-- Script al final del body para no bloquear render -->
+<script src="./js/devenir.js"></script>
+
 </body>
-
-<link rel="stylesheet" href="css/main.css" />
-<script src="js/main.js"></script>
-<script src="js/component_card.js"></script>
-
 </html>
