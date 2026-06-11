@@ -1,365 +1,304 @@
 <!DOCTYPE html>
-<html lang="es" class="light">
+<html class="light" lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Devenir — Blog personal sobre tecnología, diseño y pensamiento." />
-  <title>Devenir · Feed</title>
+  <meta name="description" content="Devenir - Escritura en movimiento" />
+  <title>Devenir · Inicio</title>
 
-  <!-- Favicon placeholder -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-
-  <!-- Fonts precargadas -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
+    rel="stylesheet" />
 
-  <!-- Material Symbols + fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet" />
-
-  <!-- Hoja de estilos -->
   <link rel="stylesheet" href="./css/devenir.css" />
 </head>
 
 <body>
-
-<!-- ════════════════════════════════════════
-     HEADER
-     ════════════════════════════════════════ -->
-<header class="site-header" role="banner">
-  <div class="container inner">
-
-    <!-- Marca -->
-    <a href="/" class="brand" aria-label="Devenir — inicio">Devenir</a>
-
-    <!-- Nav desktop -->
-    <nav class="nav-links" aria-label="Navegación principal">
-      <a href="index.html" class="is-active">Biblioteca</a>
-      <a hidden href="#">Explorar</a>
-      <a hidden href="#">Archivo</a>
-      <a hidden href="#">Colecciones</a>
-    </nav>
-
-    <!-- Acciones -->
-    <div class="flex-gap-md" style="margin-left:auto;">
-      <!-- Búsqueda -->
-      <div class="search-bar neu-carved" role="search">
-        <span class="icon icon--sm c-secondary" aria-hidden="true">search</span>
-        <input type="search" placeholder="Buscar en el archivo…" aria-label="Buscar artículos" />
-      </div>
-
-      <!-- Notificaciones -->
-      <button class="icon-btn neu-btn" aria-label="Notificaciones">
-        <span class="icon c-primary">notifications</span>
+  <div class="js-mobile-drawer" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.3); z-index:40;"
+    aria-hidden="true">
+    <div
+      style="position:absolute; right:0; top:0; bottom:0; width:280px; background:var(--surface); box-shadow:var(--neu-header); padding:var(--space-lg);">
+      <button class="icon-btn js-menu-toggle" style="margin-bottom:var(--space-md);" aria-label="Cerrar menú">
+        <span class="icon">close</span>
       </button>
-
-      <!-- Configuración -->
-      <!-- Theme Toggle (reemplaza el botón de settings) -->
-<button 
-  class="icon-btn neu-btn js-theme-toggle" 
-  aria-label="Cambiar tema"
-  data-theme-toggle
->
-  <span class="icon c-primary js-theme-icon">dark_mode</span>
-</button>
-
-      <!-- Avatar -->
-      <div class="avatar neu-extruded" aria-hidden="true">
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVGE1N3Lh36CYmSyHr7cZUfNPSmysIfH3i-d0qeryarQPM5xHbGkyDuz8PMEInl2VJxpCpdxm6R_HVQ88C_dx6xazWI1yotRTNwkoESau2vGUW2wH7T35lntwM74LLJwJ1cb4uPqNsR5mNiGttA5trBPycRcyc_7-fPGLdgTsTxcujkJpETl3H2EBiBDLxIiFQDnu16evjAdNOgqGipuFpEfqjw2J0NAswhsfEytU_8_nwq10GOj2edQ_Mt1xqWkuglEQ3ElmAI3Q"
-          alt="Foto de perfil"
-          loading="lazy"
-        />
-      </div>
+      <nav style="display:flex; flex-direction:column; gap:var(--space-md);">
+        <a href="#" class="text-label-lg c-primary">Explorar</a>
+        <a href="#" class="text-label-lg c-secondary">Lecturas</a>
+        <a href="#" class="text-label-lg c-secondary">Favoritos</a>
+      </nav>
     </div>
-
   </div>
-</header>
 
+  <main>
+    <div class="feed-container">
+      <div style="margin-bottom:var(--space-lg);">
+        <h1 class="text-display" style="margin-bottom:var(--space-sm);">Devenir</h1>
+        <p class="feed-tagline">"El pensamiento es un hilo, la lectura es el tejido."</p>
+      </div>
 
-<!-- ════════════════════════════════════════
-     MAIN
-     ════════════════════════════════════════ -->
-<main class="container" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
-  <div class="main-layout">
+      <div class="chip-row" role="tablist" aria-label="Filtrar por categoría">
+        <button class="chip is-active" role="tab" aria-selected="true">Artículos</button>
+        <button class="chip" role="tab" aria-selected="false">¿Qué clase social eres?</button>
+        <button class="chip js-buzos-chip" role="tab" aria-selected="false">Buzos de la noticia</button>
+        <button class="chip" role="tab" aria-selected="false">Más proximamente...</button>
+      </div>
 
-    <!-- ── SIDEBAR (solo desktop) ────────── -->
-    <aside class="sidebar" aria-label="Navegación lateral">
+      <div id="feed-skeleton"
+        style="display:none; grid-template-columns:1fr 1fr; gap:var(--space-md); margin-bottom:var(--space-xl);">
+        <div class="skeleton"
+          style="height:220px; border-radius:var(--radius-lg); background:var(--surface-low); box-shadow:var(--neu-carved);">
+        </div>
+        <div class="skeleton"
+          style="height:220px; border-radius:var(--radius-lg); background:var(--surface-low); box-shadow:var(--neu-carved);">
+        </div>
+        <div class="skeleton"
+          style="height:220px; border-radius:var(--radius-lg); background:var(--surface-low); box-shadow:var(--neu-carved);">
+        </div>
+        <div class="skeleton"
+          style="height:220px; border-radius:var(--radius-lg); background:var(--surface-low); box-shadow:var(--neu-carved);">
+        </div>
+      </div>
 
-      <!-- Perfil 
-      <div hidden class="sidebar-profile">
-        <p class="sidebar-profile__name">Autor</p>
-        <p class="sidebar-profile__role">Espacio de escritura personal</p>
-        <button class="neu-btn load-more-btn" style="width:100%; margin-top:8px; justify-content:center;">
-          <span class="icon icon--sm">add</span>
-          Nueva entrada
+      <div id="featured-slot" style="margin-bottom:var(--space-xl);"></div>
+
+      <div id="articles-grid" class="articles-grid"></div>
+
+      <div class="load-more-wrapper" id="load-more-wrapper">
+        <button class="load-more-btn neu-btn js-load-more" aria-label="Cargar más artículos">
+          Cargar más pensamientos
+          <span class="icon">keyboard_arrow_down</span>
         </button>
       </div>
-      -->
-
-      <!-- Links de nav -->
-      <nav class="sidebar-nav" aria-label="Secciones">
-        <a href="#" class="is-active">
-          <span class="icon icon--sm icon--fill">home</span>
-          <span class="text-label-md">Inicio</span>
-        </a>
-        <a href="#">
-          <span class="icon icon--sm">explore</span>
-          <span class="text-label-md">Descubrir</span>
-        </a>
-        <a href="#">
-          <span class="icon icon--sm">menu_book</span>
-          <span class="text-label-md">Lista de lectura</span>
-        </a>
-        <a href="#">
-          <span class="icon icon--sm">edit_note</span>
-          <span class="text-label-md">Cuaderno</span>
-        </a>
-        <a href="#">
-          <span class="icon icon--sm">history</span>
-          <span class="text-label-md">Historial</span>
-        </a>
-      </nav>
-
-      <!-- Footer sidebar -->
-      <div class="sidebar-footer">
-        <a href="#">
-          <span class="icon icon--sm">help</span> Soporte
-        </a>
-        <a href="#">
-          <span class="icon icon--sm">shield</span> Privacidad
-        </a>
+      <div
+        style="width:64px; height:1px; background:var(--outline-variant); margin:var(--space-md) auto 0; opacity:.3;">
       </div>
-    </aside>
+    </div>
+  </main>
 
-    <!-- ── CONTENIDO PRINCIPAL ────────────── -->
-    <section class="main-content content-col" aria-label="Artículos">
+  <aside class="floating-sidebar"
+    style="display:none; position:fixed; left:24px; top:50%; transform:translateY(-50%); flex-direction:column; gap:var(--space-md); z-index:40;">
+    <button class="icon-btn neu-extruded" title="Inicio"><span class="icon">home</span></button>
+    <button class="icon-btn neu-extruded" title="Artículo aleatorio"><span class="icon">shuffle</span></button>
+    <button class="icon-btn neu-extruded" title="Mi lectura"><span class="icon">book_2</span></button>
+    <button class="icon-btn neu-extruded js-theme-toggle" title="Cambiar tema"><span
+        class="icon js-theme-icon">dark_mode</span></button>
+  </aside>
 
-      <!-- Chips de categoría -->
-      <div class="chip-row" role="tablist" aria-label="Filtrar por categoría">
-        <button class="chip is-active" role="tab" aria-selected="true">Todo</button>
-        <button class="chip" role="tab" aria-selected="false">Tecnología</button>
-        <button class="chip" role="tab" aria-selected="false">Cultura</button>
-        <button class="chip" role="tab" aria-selected="false">Diseño</button>
-        <button class="chip" role="tab" aria-selected="false">Filosofía</button>
-        <button class="chip" role="tab" aria-selected="false">Ciencia</button>
+  <nav class="mobile-nav" aria-label="Navegación principal móvil">
+    <a href="#" class="is-active" aria-current="page"><span
+        class="icon icon--sm icon--fill">home</span><span>Inicio</span></a>
+    <a href="#"><span class="icon icon--sm">shuffle</span><span>Aleatorio</span></a>
+    <a href="#"><span class="icon icon--sm">book_2</span><span>Lectura</span></a>
+    <button class="mobile-theme-toggle js-theme-toggle" aria-label="Cambiar tema"><span
+        class="icon icon--sm js-theme-icon">dark_mode</span><span>Tema</span></button>
+  </nav>
+
+  <footer class="site-footer">
+    <div class="inner container">
+      <div class="flex-gap-sm">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI9CcxbM0UHFj3eWBM8xw__Dohu9Aa9sADmSuM-yiGp_5WOJlI3wHnIssAzM2UwWSWzz_s_vHb4eVOm76qDJhxBev84iXW_YRthY_jYftFk_iLMmhdr1fwcW3M5MzbR-SmlW4kShFZiQqOtGmO64c4r4w6i1Yy_5T1yp3pAoh84UpU5WaYMQUm7xIXg9L9IzQj9xEiDLTGhDPf2aYa5egblRG6UDvbQgo4V_nk1J9CnG1qL9wTa29RxiYMKQT0sp3d2_jJE1N9pQfy"
+          alt="Devenir Blog" style="height:24px; width:auto; opacity:0.5;" />
+        <span class="site-footer__copy">© 2023 Devenir Blog. Todos los derechos reservados.</span>
       </div>
+      <div class="site-footer__links">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#">Newsletter</a>
+      </div>
+    </div>
+  </footer>
 
-      <!-- ── ARTÍCULO DESTACADO ───────────── -->
-      <article class="featured-card fade-in" aria-label="Artículo destacado">
+  <script src="./js/devenir.js"></script>
+  <script src="./js/articles-loader.js"></script>
+  <script>
+    (function () {
+      /* === CONFIGURACIÓN === */
+      const API_PROXY = 'https://corsproxy.io/?';   // proxy CORS público
+      const BUZOS_SEARCH_URL = 'https://buzos.com.mx/search-results?s=heras&filter=*.html';
+      const STATIC_THUMB = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCpgkdiQ7oBdGMPUgrOX5dNH-JlC1xcJbVe2SYUYM7y9nKsp8S77kIehmnSJAj1OGTgG35rb95PpE7oBpPyYB_TtIcwhpJU6VdJ95p2gzk7XwIYHlpEAD4qUo5MnXJ_7B4HhJ6ZU_cYubbS-oJSwc4K7cAYxpR9usM9lUEy4RB6FP-11IFsvqR4WHOsL_ORip4srjeTOE-Tb76cJLjxarTPQ0-8J9Kb_Fqt0qlzNl0MM7msXVNIqRYCNtd4JrLVX2heRa_xOqQTSiBs'; // imagen genérica
 
-        <!-- Barra de progreso de lectura -->
-        <div class="featured-progress">
-          <div class="progress-track">
-            <div class="progress-fill gradient-brand js-reading-progress" style="width:20%;"></div>
+      const gridContainer = document.getElementById('articles-grid');
+      const skeleton = document.getElementById('feed-skeleton');
+      const loadMoreWrapper = document.getElementById('load-more-wrapper');
+      const buzosChip = document.querySelector('.js-buzos-chip');
+      const chips = document.querySelectorAll('.chip');
+
+      /* === PARSEADOR DEL HTML DE BÚSQUEDA === */
+      function parseBuzosHTML(htmlString) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlString, 'text/html');
+        const items = doc.querySelectorAll('.search-list-item');
+        const articles = [];
+
+        items.forEach(item => {
+          const titleEl = item.querySelector('h5 a.search-link');
+          const descEl = item.querySelector('p:not(.match)');   // primer párrafo que no sea el del match
+          const authorMatch = item.querySelector('.match em');
+
+          if (!titleEl) return;
+
+          let author = 'Buzos';
+          if (authorMatch) {
+            const text = authorMatch.textContent || '';
+            const match = text.match(/Autor:\s*(.+)/);
+            if (match) author = match[1].trim();
+          }
+
+          articles.push({
+            title: titleEl.textContent.trim(),
+            link: titleEl.href,
+            excerpt: descEl ? descEl.textContent.trim() : '',
+            author: author,
+            category: 'Buzos',
+            date: 'Fecha no disponible',
+            readTime: '5 min'   // no hay info real
+          });
+        });
+
+        return articles;
+      }
+
+      /* === CREACIÓN DE UNA CARD NEUMÓRFICA === */
+      function createArticleCard(article) {
+        const card = document.createElement('article');
+        card.className = 'article-card fade-in';
+
+        card.innerHTML = `
+          <div class="flex-gap-sm" style="flex-wrap:wrap;">
+            <span class="article-card__tag neu-carved">${article.category}</span>
+            <span class="text-label-md c-muted">${article.readTime}</span>
           </div>
-        </div>
-
-        <!-- Imagen -->
-        <div class="featured-card__image">
-          <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRp-zuurx7kYvWNLXCNsspTvPClDZ_7_LEhc3SNYkO-GHEXZiuFvoJe3E1LLOk1KKPt9_LkhoGsdtwg3MnEhK8EeVqsR9EEnDpr57_MGyVWPG6Mi9aJEQig7bH32VGg0pDosys-3x5pScQN3w11BDfy6jUr8r4SQ1PWJBG7Iep9zutbKXufo0voHesQYY0gwwoF_MyNOvdG_tL7U34_5lQGk9YJmOSsWqvT8v5NXDsbw3h9rt9N3Nv5zAB4ymxZ4w9FBicn46eI_k"
-            alt="Pergamino digital texturizado con trazos de luz cian"
-            loading="eager"
-          />
-
-          <!-- Texto sobre la imagen -->
-          <div class="featured-card__overlay">
-            <span class="featured-badge gradient-brand">Ensayo destacado</span>
-            <h1 class="featured-card__title">El Renacimiento de la Epigrafía Digital</h1>
-          </div>
-        </div>
-
-        <!-- Cuerpo -->
-        <div class="featured-card__body">
-          <p class="featured-card__excerpt">
-            Cómo las técnicas modernas de archivado preservan la naturaleza efímera del discurso
-            digital del siglo XXI para el acceso institucional del futuro.
-          </p>
-          <div class="featured-card__meta">
-            <div class="flex-gap-sm">
-              <span class="text-label-md c-primary">Dr. Alistair Thorne</span>
-              <span class="dot-separator"></span>
-              <span class="text-label-md c-secondary">12 min de lectura</span>
-            </div>
-            <button class="bookmark-btn neu-btn icon-btn" aria-label="Guardar artículo" data-saved="false">
+          <div class="article-card__header">
+            <h3 class="article-card__title">${article.title}</h3>
+            <button class="bookmark-btn" data-saved="false" aria-label="Guardar artículo">
               <span class="icon">bookmark</span>
             </button>
           </div>
-        </div>
-
-      </article>
-
-      <!-- ── GRID DE ARTÍCULOS ──────────────── -->
-      <div class="articles-grid" aria-label="Lista de artículos">
-
-        <!-- Card 1 -->
-        <article class="article-card fade-in">
-          <div class="article-card__header">
-            <span class="article-card__tag">Tecnología</span>
-            <button class="icon-btn" aria-label="Más opciones" style="color:var(--outline-variant)">
-              <span class="icon icon--sm">more_horiz</span>
-            </button>
-          </div>
-          <h2 class="article-card__title">Paleografía Algorítmica</h2>
-          <p class="article-card__excerpt">
-            Descifrando pergaminos antiguos mediante imágenes multiespectrales y reconstrucción
-            por redes neuronales en los archivos del Vaticano.
-          </p>
+          <p class="article-card__excerpt">${article.excerpt}</p>
           <div class="article-card__footer">
-            <span class="text-label-md c-secondary">14 oct 2024</span>
-            <a href="./articulo.html" class="read-link">
-              Leer <span class="icon icon--sm">arrow_forward</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="article-card fade-in">
-          <div class="article-card__header">
-            <span class="article-card__tag">Filosofía</span>
-            <button class="icon-btn" aria-label="Más opciones" style="color:var(--outline-variant)">
-              <span class="icon icon--sm">more_horiz</span>
-            </button>
-          </div>
-          <h2 class="article-card__title">Ética del Scroll Infinito</h2>
-          <p class="article-card__excerpt">
-            Un estudio fenomenológico sobre la erosión del espacio contemplativo en la
-            arquitectura moderna de la información.
-          </p>
-          <div class="article-card__footer">
-            <span class="text-label-md c-secondary">12 oct 2024</span>
-            <a href="#" class="read-link">
-              Leer <span class="icon icon--sm">arrow_forward</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Card 3 — wide con imagen -->
-        <article class="article-card article-card--wide fade-in">
-          <div class="card-inner">
-            <div class="card-thumb">
-              <img
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL_i58n6vQ9cRswUGt52Kr0CW_KBMkGDqM7OpMmpptnnkb307ovVT_VWus12rRQ33y4kLpLtvBEZFvrCTOTEK82wEQi7JxGJ7nZO_Ha533d2ZKKbBgdSm89jv1LFTxK6UR3-lG4qLaIbTa2eZr9J4Epgf5dXyf9iJh3pSTYqHNf6dGBxqjEII0PVfiDY-i8RpkZHgZJWX0i2tmp5ivtv_RVxkiHZSaA1LQO9BSOuwWyKaOKaVvDzOw2VjJpM5MiVSUh5Qi7C6RJmw"
-                alt="Interior arquitectónico minimalista"
-                loading="lazy"
-              />
+            <div class="flex-gap-sm">
+              <div class="avatar" style="width:32px; height:32px; background:var(--secondary-container); display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; color:var(--on-secondary-container);">${article.author.charAt(0)}</div>
+              <span class="text-label-md" style="font-weight:600;">${article.author}</span>
             </div>
-            <div class="card-content">
-              <span class="article-card__tag">Diseño</span>
-              <h2 class="article-card__title" style="font-size:20px;">Escolástica Brutalista</h2>
-              <p class="article-card__excerpt clamp-2">
-                Redefiniendo las interfaces universitarias a través de la honestidad estructural
-                y el funcionalismo en bruto.
-              </p>
-              <span class="text-label-md c-secondary" style="margin-top:6px;">
-                8 min · 42 anotaciones
-              </span>
-            </div>
+            <span class="text-label-md c-muted">${article.date}</span>
           </div>
-        </article>
+        `;
 
-        <!-- Card 4 -->
-        <article class="article-card fade-in">
-          <div class="article-card__header">
-            <span class="article-card__tag">Cultura</span>
-            <button class="icon-btn" aria-label="Más opciones" style="color:var(--outline-variant)">
-              <span class="icon icon--sm">more_horiz</span>
-            </button>
-          </div>
-          <h2 class="article-card__title">Memoria y Olvido Digital</h2>
-          <p class="article-card__excerpt">
-            Reflexiones sobre la permanencia de los datos y el derecho al olvido en la era
-            de los modelos de lenguaje de gran escala.
-          </p>
-          <div class="article-card__footer">
-            <span class="text-label-md c-secondary">9 oct 2024</span>
-            <a href="#" class="read-link">
-              Leer <span class="icon icon--sm">arrow_forward</span>
-            </a>
-          </div>
-        </article>
+        // Enlace completo en la tarjeta (opcional: abrir en ventana nueva)
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('button')) return; // no interferir con bookmark
+          window.open(article.link, '_blank');
+        });
+        card.style.cursor = 'pointer';
 
-        <!-- Card 5 -->
-        <article class="article-card fade-in">
-          <div class="article-card__header">
-            <span class="article-card__tag">Ciencia</span>
-            <button class="icon-btn" aria-label="Más opciones" style="color:var(--outline-variant)">
-              <span class="icon icon--sm">more_horiz</span>
-            </button>
-          </div>
-          <h2 class="article-card__title">El Tiempo como Material</h2>
-          <p class="article-card__excerpt">
-            Explorando la cronotopología en la física cuántica y su resonancia con las
-            narrativas filosóficas del devenir.
-          </p>
-          <div class="article-card__footer">
-            <span class="text-label-md c-secondary">5 oct 2024</span>
-            <a href="#" class="read-link">
-              Leer <span class="icon icon--sm">arrow_forward</span>
-            </a>
-          </div>
-        </article>
+        return card;
+      }
 
-      </div><!-- /articles-grid -->
+      /* === RENDERIZADO DEL FEED === */
+      function renderArticles(articles) {
+        gridContainer.innerHTML = '';
+        if (articles.length === 0) {
+          gridContainer.innerHTML = '<p class="text-body-md c-muted" style="grid-column:1/-1; text-align:center;">No se encontraron artículos.</p>';
+          return;
+        }
+        articles.forEach(article => gridContainer.appendChild(createArticleCard(article)));
+      }
 
-      <!-- Cargar más -->
-      <div class="load-more-wrapper">
-        <button class="load-more-btn neu-btn js-load-more" aria-label="Cargar más artículos">
-          Cargar más
-          <span class="icon icon--sm">sync</span>
-        </button>
-      </div>
+      /* === MOSTRAR / OCULTAR SKELETON === */
+      function toggleSkeleton(show) {
+        skeleton.style.display = show ? 'grid' : 'none';
+      }
 
-    </section><!-- /main-content -->
-  </div><!-- /main-layout -->
-</main>
+      /* === CARGA DESDE API === */
+      async function loadBuzosArticles() {
+        toggleSkeleton(true);
+        gridContainer.innerHTML = '';
+        loadMoreWrapper.style.display = 'none';   // ocultar "Cargar más" porque la API no pagina
 
+        try {
+          const proxyUrl = API_PROXY + encodeURIComponent(BUZOS_SEARCH_URL);
+          const response = await fetch(proxyUrl);
+          if (!response.ok) throw new Error('Error de red');
+          const html = await response.text();
+          const articles = parseBuzosHTML(html);
+          renderArticles(articles);
+        } catch (error) {
+          console.error(error);
+          gridContainer.innerHTML = '<p class="text-body-md c-error" style="grid-column:1/-1; text-align:center;">No se pudieron cargar los artículos. Intenta de nuevo más tarde.</p>';
+        } finally {
+          toggleSkeleton(false);
+        }
+      }
 
-<!-- ════════════════════════════════════════
-     FOOTER
-     ════════════════════════════════════════ -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container inner">
-    <div>
-      <p class="site-footer__brand">Devenir</p>
-      <p class="site-footer__copy">© 2024 Devenir. Escritura en movimiento.</p>
-    </div>
-    <nav class="site-footer__links" aria-label="Links del pie de página">
-      <a href="#">Política editorial</a>
-      <a href="#">Acceso institucional</a>
-      <a href="#">RSS</a>
-      <a href="#">Contacto</a>
-    </nav>
-  </div>
-</footer>
+      /* === CAMBIO DE CHIPS === */
+      function activateChip(chip) {
+        chips.forEach(c => {
+          c.classList.remove('is-active');
+          c.setAttribute('aria-selected', 'false');
+        });
+        chip.classList.add('is-active');
+        chip.setAttribute('aria-selected', 'true');
+      }
 
+      buzosChip.addEventListener('click', () => {
+        activateChip(buzosChip);
+        loadBuzosArticles();
+      });
 
-<!-- ════════════════════════════════════════
-     NAV MÓVIL (bottom bar)
-     ════════════════════════════════════════ -->
-<nav class="mobile-nav" aria-label="Navegación móvil">
-  <a href="#" class="is-active" aria-current="page">
-    <span class="icon icon--sm icon--fill">home</span>
-    <span>Inicio</span>
-  </a>
-  <a href="#">
-    <span class="icon icon--sm">explore</span>
-    <span>Descubrir</span>
-  </a>
-  <a href="#">
-    <span class="icon icon--sm">menu_book</span>
-    <span>Biblioteca</span>
-  </a>
-  <a href="#">
-    <span class="icon icon--sm">person</span>
-    <span>Perfil</span>
-  </a>
-</nav>
+      const defaultChip = document.querySelector('.chip.is-active');
+      defaultChip.addEventListener('click', () => {
+        activateChip(defaultChip);
+        // Restaurar feed original sin recargar
+        if (window.reloadFeed) {
+          window.reloadFeed();
+        } else {
+          window.location.reload(); // fallback
+        }
+        loadMoreWrapper.style.display = '';
+      });
 
+      /* === RESPONSIVE SIDEBAR (ya lo tenías, lo mantenemos) === */
+      const floatingSidebar = document.querySelector('.floating-sidebar');
+      const mediaQuery = window.matchMedia('(min-width: 1024px)');
+      function toggleSidebar(e) {
+        floatingSidebar.style.display = e.matches ? 'flex' : 'none';
+      }
+      mediaQuery.addEventListener('change', toggleSidebar);
+      toggleSidebar(mediaQuery);
 
-<!-- Script al final del body para no bloquear render -->
-<script src="./js/devenir.js"></script>
+      /* === THEME TOGGLE (ambos botones) === */
+      const themeToggles = document.querySelectorAll('.js-theme-toggle');
+      const themeIcons = document.querySelectorAll('.js-theme-icon');
+      const html = document.documentElement;
 
+      function setTheme(isDark) {
+        html.classList.toggle('dark', isDark);
+        html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        const iconName = isDark ? 'light_mode' : 'dark_mode';
+        themeIcons.forEach(icon => icon.textContent = iconName);
+        localStorage.setItem('devenir-theme', isDark ? 'dark' : 'light');
+      }
+
+      const savedTheme = localStorage.getItem('devenir-theme');
+      if (savedTheme) {
+        setTheme(savedTheme === 'dark');
+      }
+
+      themeToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isDark = !html.classList.contains('dark');
+          setTheme(isDark);
+        });
+      });
+    })();
+  </script>
 </body>
+
 </html>

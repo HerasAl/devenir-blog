@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "la-ia-no-es-ia",
+    "title": "Por qué la Inteligencia Artificial, no es Inteligencia Artificial.",
+    "excerpt": "Un análisis crítico sobre el concepto de Inteligencia Artificial, su verdadera naturaleza basada en Machine Learning y por qué llamarla inteligencia puede ser engañoso.",
+    "category": "Tecnología",
+    "date": "2023-02-14",
+    "readTime": 12,
+    "image": "https://github.com/HerasAl/devenir-blog/blob/e4609b1283fc5a1cf5c3f9416d712262ee9a5bef/public/assets/dalle/roboto_model.png?raw=true",
+    "featured": true,
+    "wide": false
+  }
+]

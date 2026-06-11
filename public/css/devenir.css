@@ -575,7 +575,7 @@ overflow: hidden;
 
 .article-card__footer {
 margin-top: auto;
-padding-top: var(--space-sm);
+padding-top: 10%;
 display: flex;
 align-items: center;
 justify-content: space-between;
@@ -1494,4 +1494,77 @@ img, .icon, .fade-in {
 }
 .js-theme-toggle:hover::after {
   opacity: 1;
+}
+
+/* ============================================
+   CONTENEDOR DEL FEED OPTIMIZADO
+   ============================================ */
+.feed-container {
+  padding-top: 5svh;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Grid de artículos adaptable (1 → 2 → 3 columnas) */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+}
+
+/* ============================================
+   BARRA DE NAVEGACIÓN MÓVIL (nueva)
+   ============================================ */
+.mobile-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  box-shadow: 0 -6px 12px var(--shadow-dark);
+  padding: var(--space-sm) var(--space-md);
+  z-index: 50;
+}
+
+.mobile-nav a,
+.mobile-nav .mobile-theme-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--secondary);
+  font-family: var(--font-ui);
+  font-size: 10px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-nav a.is-active,
+.mobile-nav .mobile-theme-toggle:hover {
+  color: var(--accent);
+}
+
+.mobile-nav a:hover,
+.mobile-nav .mobile-theme-toggle:hover {
+  color: var(--primary);
+}
+
+/* Oculta la barra móvil en escritorio */
+@media (min-width: 1024px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/* Ajuste para que el contenido no quede tapado por la barra móvil */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: 80px;
+  }
 }

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html class="light" lang="es" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- articles-loader.js actualiza dinámicamente title y description -->
+  <title>Cargando… · Devenir</title>
+  <meta name="description" content="" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/devenir.css" />
+  <style>
+    /* ===== Barra de herramientas flotante (escritorio → izquierda) ===== */
+    .reading-toolbar {
+      position: fixed;
+      left: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 50;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .reading-toolbar button,
+    .reading-toolbar a {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--surface);
+      box-shadow: var(--neu-extruded);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--on-surface-variant);
+      transition: all 0.2s ease;
+    }
+
+    .reading-toolbar button:hover,
+    .reading-toolbar a:hover {
+      color: var(--accent);
+      transform: scale(1.05);
+    }
+
+    .reading-toolbar button:active {
+      box-shadow: var(--neu-active);
+      transform: scale(0.96);
+    }
+
+    /* Separador visual dentro de la barra */
+    .toolbar-separator {
+      width: 24px;
+      height: 1px;
+      background: var(--outline-variant);
+      opacity: 0.3;
+      margin: 4px auto;
+    }
+
+    /* ===== Modo concentración: oculta todos los elementos no esenciales ===== */
+    body.focus-mode .reading-toolbar,
+    body.focus-mode .js-reading-progress,
+    body.focus-mode .back-link,
+    body.focus-mode .site-footer {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .back-link, .site-footer {
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    /* ===== Adaptación MÓVIL (≤ 767px) ===== */
+    @media (max-width: 767px) {
+      /* Ocultamos la barra lateral izquierda */
+      .reading-toolbar {
+        display: none;
+      }
+
+      /* Barra inferior compacta y horizontal */
+      .reading-toolbar-mobile {
+        display: flex;
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 50;
+        background: var(--surface);
+        box-shadow: var(--neu-extruded);
+        border-radius: 16px;
+        padding: 8px 16px;
+        gap: 8px;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        background: rgba(247, 249, 255, 0.85); /* ligero vidrio esmerilado */
+      }
+
+      /* Modo oscuro: ajustar transparencia */
+      [data-theme="dark"] .reading-toolbar-mobile {
+        background: rgba(30, 34, 40, 0.9);
+      }
+
+      .reading-toolbar-mobile button,
+      .reading-toolbar-mobile a {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: transparent;
+        box-shadow: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--on-surface-variant);
+        transition: color 0.2s ease, transform 0.2s ease;
+      }
+
+      .reading-toolbar-mobile button:hover,
+      .reading-toolbar-mobile a:hover {
+        color: var(--accent);
+      }
+
+      .reading-toolbar-mobile button:active {
+        transform: scale(0.95);
+      }
+
+      .mobile-separator {
+        width: 1px;
+        height: 24px;
+        background: var(--outline-variant);
+        opacity: 0.2;
+        margin: 0 4px;
+      }
+
+      /* Ajustes de espaciado para que el contenido no quede tapado */
+      .reading-layout {
+        padding-bottom: 100px; /* espacio extra para la barra inferior */
+        padding-top: 2rem;
+        padding-inline: 1rem;
+      }
+
+      /* Tipografía más pequeña y agradable en móvil */
+      .article-title {
+        font-size: 2rem; /* ~32px */
+        line-height: 1.2;
+      }
+
+      .article-body {
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+    }
+
+    /* Pantallas grandes: ocultamos la barra móvil */
+    @media (min-width: 768px) {
+      .reading-toolbar-mobile {
+        display: none;
+      }
+
+      .reading-layout {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+      }
+    }
+
+    /* Pequeño ajuste para dispositivos muy pequeños (ej. < 360px) */
+    @media (max-width: 359px) {
+      .reading-toolbar-mobile {
+        gap: 4px;
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="js-reading-progress-bar reading-progress-bar gradient-brand"
+       role="progressbar" aria-valuemin="0" aria-valuemax="100"
+       aria-label="Progreso de lectura"></div>
+
+  <!-- ════ BARRA HERRAMIENTAS DESKTOP (izquierda) ════ -->
+  <nav class="reading-toolbar" aria-label="Herramientas de lectura">
+    <a href="/" title="Volver al feed" aria-label="Ir al feed">
+      <span class="icon">home</span>
+    </a>
+    <button class="js-scroll-up" title="Párrafo anterior" aria-label="Subir">
+      <span class="icon">arrow_upward</span>
+    </button>
+    <button class="js-scroll-down" title="Párrafo siguiente" aria-label="Bajar">
+      <span class="icon">arrow_downward</span>
+    </button>
+    <span class="toolbar-separator"></span>
+    <button class="js-theme-toggle" title="Cambiar tema" aria-label="Alternar tema">
+      <span class="icon js-theme-icon">dark_mode</span>
+    </button>
+    <button class="js-focus-toggle" title="Modo concentración" aria-label="Ocultar interfaz">
+      <span class="icon">visibility_off</span>
+    </button>
+  </nav>
+
+  <!-- ════ BARRA HERRAMIENTAS MÓVIL (inferior) ════ -->
+  <nav class="reading-toolbar-mobile" aria-label="Herramientas móvil">
+    <a href="/" aria-label="Ir al feed">
+      <span class="icon">home</span>
+    </a>
+    <button class="js-scroll-up" aria-label="Subir párrafo">
+      <span class="icon">arrow_upward</span>
+    </button>
+    <button class="js-scroll-down" aria-label="Bajar párrafo">
+      <span class="icon">arrow_downward</span>
+    </button>
+    <span class="mobile-separator"></span>
+    <button class="js-theme-toggle" aria-label="Cambiar tema">
+      <span class="icon js-theme-icon">dark_mode</span>
+    </button>
+    <button class="js-focus-toggle" aria-label="Modo concentración">
+      <span class="icon">visibility_off</span>
+    </button>
+  </nav>
+
+  <!-- ════════════════════════════
+       ARTÍCULO
+       ════════════════════════════ -->
+  <main>
+    <article class="reading-layout container">
+
+      <!-- Back link -->
+      <a href="/" class="back-link">
+        <span class="icon icon--sm">arrow_back</span>
+        Volver al feed
+      </a>
+
+      <!-- ── CABECERA ─────────────────────────────────────
+           articles-loader.js rellena estos IDs automáticamente
+           ──────────────────────────────────────────────── -->
+      <header class="article-header">
+        <span class="article-category-badge" id="article-category">···</span>
+        <h1 class="article-title" id="article-title-el">Cargando artículo…</h1>
+        <div class="article-meta">
+          <!-- Sin foto de autor: mostramos solo texto de meta -->
+          <div>
+            <span class="article-meta__name">Devenir</span>
+            <span class="article-meta__info">
+              <span id="article-date">···</span>
+              &nbsp;·&nbsp;
+              <span id="article-readtime">···</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- ── HERO IMAGE ────────────────────────────────────
+           articles-loader.js actualiza src y alt
+           ──────────────────────────────────────────────── -->
+      <div class="article-hero">
+        <img id="article-hero-img"
+             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400'%3E%3Crect fill='%23e5e8ee' width='800' height='400'/%3E%3C/svg%3E"
+             alt="Imagen del artículo"
+             loading="eager" />
+      </div>
+
+      <!-- ── CUERPO ─────────────────────────────────────────
+           articles-loader.js inyecta a.body aquí como innerHTML.
+           El campo "body" en tu JSON debe ser HTML:
+             "<p>Párrafo</p><h2>Título</h2><p>...</p>"
+           ──────────────────────────────────────────────── -->
+      <div class="article-body" id="article-content">
+        <!-- skeleton de carga -->
+        <div class="skeleton skeleton-title"  style="width:75%;"></div>
+        <div class="skeleton skeleton-text"   style="width:100%;"></div>
+        <div class="skeleton skeleton-text"   style="width:92%;"></div>
+        <div class="skeleton skeleton-text"   style="width:88%;"></div>
+        <div class="skeleton skeleton-text"   style="width:95%;margin-top:24px;"></div>
+        <div class="skeleton skeleton-text"   style="width:85%;"></div>
+      </div>
+
+    </article>
+  </main>
+
+  <!-- Footer mínimo -->
+  <footer class="site-footer" style="opacity:.6;">
+    <div class="inner container" style="justify-content:center;">
+      <span class="site-footer__copy">© 2024 Devenir · Escritura en movimiento</span>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════
+       SCRIPTS
+       ════════════════════════════ -->
+  <script src="../js/devenir.js"></script>
+  <script src="../js/articles-loader.js"></script>
+  <script>
+  (function(){
+    /* ── Progreso de lectura ── */
+    const bar = document.querySelector('.js-reading-progress-bar');
+    if (bar) {
+      window.addEventListener('scroll', () => {
+        const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+      }, { passive:true });
+    }
+
+    /* ── Dark mode ── */
+    const html = document.documentElement;
+    function applyTheme(dark) {
+      html.setAttribute('data-theme', dark ? 'dark' : 'light');
+      html.classList.toggle('dark', dark);
+      document.querySelectorAll('.js-theme-icon').forEach(i => i.textContent = dark ? 'light_mode' : 'dark_mode');
+      localStorage.setItem('devenir-theme', dark ? 'dark' : 'light');
+    }
+    applyTheme(localStorage.getItem('devenir-theme') === 'dark');
+    document.querySelectorAll('.js-theme-toggle').forEach(btn =>
+      btn.addEventListener('click', () => applyTheme(!html.classList.contains('dark')))
+    );
+
+    /* ── Navegación por párrafos ── */
+    function getParagraphs() {
+      const body = document.getElementById('article-content');
+      return body ? Array.from(body.querySelectorAll('p, h2, h3')) : [];
+    }
+    function currentIdx(paras) {
+      const mid = window.scrollY + window.innerHeight / 2;
+      let best = 0, minDist = Infinity;
+      paras.forEach((p,i) => {
+        const r = p.getBoundingClientRect();
+        const c = r.top + window.scrollY + r.height / 2;
+        const d = Math.abs(mid - c);
+        if (d < minDist) { minDist = d; best = i; }
+      });
+      return best;
+    }
+    document.querySelectorAll('.js-scroll-up').forEach(btn => btn.addEventListener('click', () => {
+      const ps = getParagraphs(); const i = currentIdx(ps);
+      if (i > 0) ps[i-1].scrollIntoView({ behavior:'smooth', block:'center' });
+    }));
+    document.querySelectorAll('.js-scroll-down').forEach(btn => btn.addEventListener('click', () => {
+      const ps = getParagraphs(); const i = currentIdx(ps);
+      if (i < ps.length-1) ps[i+1].scrollIntoView({ behavior:'smooth', block:'center' });
+    }));
+
+    /* ── Modo concentración ── */
+    document.querySelectorAll('.js-focus-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.body.classList.toggle('focus-mode');
+        const on = document.body.classList.contains('focus-mode');
+        document.querySelectorAll('.js-focus-toggle .icon').forEach(i => i.textContent = on ? 'visibility' : 'visibility_off');
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>

@@ -161,35 +161,7 @@
     imgs.forEach(img => observer.observe(img));
   }
 
-  /* ─────────────────────────────────────────
-     9. FADE-IN al entrar en viewport
-     ───────────────────────────────────────── */
-  function initFadeIn() {
-    if (!('IntersectionObserver' in window)) {
-      // Sin soporte: mostrar todo
-      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-      return;
-    }
-
-    const style = document.createElement('style');
-    style.textContent = `
-      .fade-in { opacity: 0; transform: translateY(16px); transition: opacity .45s ease, transform .45s ease; }
-      .fade-in.visible { opacity: 1; transform: translateY(0); }
-    `;
-    document.head.appendChild(style);
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  }
-
+  
   /* ─────────────────────────────────────────
      10. "CARGAR MÁS" — simulación (reemplazar
          con fetch real a tu JSON/API)
@@ -228,7 +200,6 @@
     initMobileMenu();
     initSearch();
     initLazyImages();
-    initFadeIn();
     initLoadMore();
   }
 
